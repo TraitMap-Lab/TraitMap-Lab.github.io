@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — TraitMap Lab</title>
+<meta name="description" content="List of publications by TraitMap Lab, Dept. of Agronomy, NCHU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --g50:#EAF3DE;--g100:#C0DD97;--g200:#97C459;--g400:#5A8F1A;--g600:#3B6D11;--g800:#274F0A;--g900:#162E05;
+  --t50:#E0F5EE;--t200:#7DDBB9;--t400:#1D9E75;--t600:#0F6E56;
+  --s50:#F5F3EC;--s100:#E2DFD5;--s300:#B8B4A8;--s500:#7A7870;--s700:#494742;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Outfit',sans-serif;
+  --max:1100px; --radius:12px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); font-size: 16px; background: #f8f7f3; color: #1e1d1a; line-height: 1.7; }
+
+[data-lang="zh"] .en { display: none !important; }
+[data-lang="en"] .zh { display: none !important; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(248,247,243,0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--s100);
+  height: 60px; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+.nav-brand-en { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.05em; color: var(--g800); }
+.nav-brand-zh { font-size: 13px; color: var(--s500); letter-spacing: 0.06em; font-weight: 400; }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links { display: flex; gap: 1.25rem; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--s700); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--g600); font-weight: 500; }
+.lang-btn {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  padding: 5px 14px; border-radius: 20px;
+  border: 1px solid var(--s100); background: #fff; color: var(--s700);
+  cursor: pointer; transition: all 0.2s;
+}
+.lang-btn:hover { border-color: var(--g200); color: var(--g600); background: var(--g50); }
+.nav-menu-btn { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--s700); }
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(160deg, var(--g900) 0%, #1a3a08 60%, var(--t600) 100%);
+  padding: 4.5rem 2rem 3.5rem; position: relative; overflow: hidden;
+}
+.page-header::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(29,158,117,0.15) 0%, transparent 60%);
+}
+.ph-inner { max-width: var(--max); margin: 0 auto; position: relative; }
+.ph-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--t200); margin-bottom: 0.75rem; }
+.ph-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 58px); font-weight: 600; color: #fff; line-height: 1.05; margin-bottom: 0.5rem; }
+.ph-sub { font-size: 16px; color: rgba(255,255,255,0.6); }
+
+/* BODY */
+.body-wrap { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 5rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+
+/* SIDEBAR */
+.sidebar { position: sticky; top: 80px; }
+.sidebar-title { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--s300); margin-bottom: 1rem; }
+.sidebar-links { display: flex; flex-direction: column; gap: 4px; }
+.sidebar-links a {
+  font-size: 14px; color: var(--s500); text-decoration: none;
+  padding: 6px 10px; border-radius: 7px; transition: all 0.15s;
+  border: 1px solid transparent;
+}
+.sidebar-links a:hover { color: var(--g600); background: var(--g50); border-color: var(--g100); }
+.sidebar-links a.active { color: var(--g600); background: var(--g50); font-weight: 500; border-color: var(--g100); }
+.sidebar-count { font-size: 12px; color: var(--s300); margin-left: 4px; }
+
+/* SECTIONS */
+.pub-section { margin-bottom: 3rem; }
+.section-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--g100);
+}
+.section-icon { font-size: 22px; }
+.section-head-title { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--g900); }
+.section-head-count {
+  font-size: 13px; font-weight: 500; color: var(--g600);
+  background: var(--g50); border: 1px solid var(--g100);
+  border-radius: 20px; padding: 2px 10px;
+}
+
+/* PUB ITEM */
+.pub-item {
+  display: grid; grid-template-columns: 36px 1fr;
+  gap: 1rem; padding: 1.25rem 0;
+  border-bottom: 1px solid var(--s100); align-items: start;
+}
+.pub-item:last-child { border-bottom: none; }
+.pub-num {
+  font-family: var(--font-display); font-size: 20px; font-weight: 600;
+  color: var(--g100); text-align: right; padding-top: 2px;
+  line-height: 1.3;
+}
+.pub-body { }
+.pub-authors { font-size: 15px; color: var(--s500); margin-bottom: 4px; line-height: 1.6; }
+.pub-authors strong { color: var(--g700, #3a5c10); font-weight: 500; }
+.pub-title {
+  font-size: 16px; font-weight: 500; color: var(--g800);
+  line-height: 1.5; margin-bottom: 6px;
+}
+.pub-title a { color: var(--g800); text-decoration: none; transition: color 0.2s; }
+.pub-title a:hover { color: var(--t600); text-decoration: underline; }
+.pub-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
+.pub-journal {
+  font-size: 14px; font-style: italic; color: var(--s500);
+}
+.pub-year {
+  font-size: 13px; font-weight: 500; color: #fff;
+  background: var(--g400); border-radius: 4px; padding: 1px 8px;
+}
+.pub-doi {
+  font-size: 13px; color: var(--t600); text-decoration: none;
+  border: 1px solid var(--t200); border-radius: 4px; padding: 1px 8px;
+  transition: all 0.2s;
+}
+.pub-doi:hover { background: var(--t50); }
+.pub-new {
+  font-size: 12px; font-weight: 600; color: #fff;
+  background: var(--t400); border-radius: 4px; padding: 1px 8px;
+  letter-spacing: 0.05em;
+}
+
+/* BOOK / CHAPTER */
+.book-item {
+  padding: 1.25rem 1.5rem;
+  background: #fff; border: 1px solid var(--s100);
+  border-radius: var(--radius); margin-bottom: 12px;
+  border-left: 4px solid var(--g200);
+}
+.book-title { font-size: 16px; font-weight: 500; color: var(--g800); margin-bottom: 6px; }
+.book-authors { font-size: 15px; color: var(--s500); margin-bottom: 4px; }
+.book-meta { font-size: 14px; color: var(--s500); }
+
+/* FOOTER */
+footer { background: var(--g900); padding: 3rem 2rem; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; }
+.f-logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--g100); letter-spacing: 0.06em; }
+.f-logo span { color: var(--t200); font-weight: 400; }
+.f-sub { font-size: 13px; color: var(--g400); margin-top: 6px; line-height: 1.8; }
+.f-copy { font-size: 12px; color: var(--g600); margin-top: 8px; }
+.f-right a { font-size: 14px; color: var(--t200); text-decoration: none; }
+.f-right p { font-size: 13px; color: var(--g400); margin-top: 4px; }
+
+/* RESPONSIVE */
+@media (max-width: 780px) {
+  .body-wrap { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .sidebar-links { flex-direction: row; flex-wrap: wrap; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 60px; left: 0; right: 0;
+    background: rgba(248,247,243,0.98); border-bottom: 1px solid var(--s100);
+    padding: 1.25rem 2rem 1.75rem; gap: 1.1rem; z-index: 199;
+  }
+  .nav-menu-btn { display: block; }
+  footer .footer-inner { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-en">TraitMap Lab</span>
+    <span class="nav-brand-zh zh">作物基因體與精準育種實驗室</span>
+    <span class="nav-brand-zh en" style="display:none!important; font-size:12px;">Crop Genomics &amp; Precision Breeding</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="zh">首頁</a><a href="index.html" class="en">Home</a></li>
+      <li><a href="index.html#research" class="zh">研究</a><a href="index.html#research" class="en">Research</a></li>
+      <li><a href="members.html" class="zh">成員</a><a href="members.html" class="en">Members</a></li>
+      <li><a href="publications.html" class="active zh">著作</a><a href="publications.html" class="active en">Publications</a></li>
+    </ul>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
+    <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-inner">
+    <p class="ph-label">TraitMap Lab</p>
+    <h1 class="ph-title zh">論文與著作</h1>
+    <h1 class="ph-title en">Publications</h1>
+    <p class="ph-sub zh">期刊論文、書籍章節及研討會論文</p>
+    <p class="ph-sub en">Journal articles, book chapters, and conference proceedings</p>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title zh">快速跳轉</div>
+    <div class="sidebar-title en">Jump to</div>
+    <div class="sidebar-links">
+      <a href="#journal" class="active">
+        <span class="zh">期刊論文</span>
+        <span class="en">Journal</span>
+        <span class="sidebar-count">10</span>
+      </a>
+      <a href="#book">
+        <span class="zh">書籍著作</span>
+        <span class="en">Books</span>
+        <span class="sidebar-count">3</span>
+      </a>
+      <a href="#conf">
+        <span class="zh">研討會論文</span>
+        <span class="en">Conference</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ══ JOURNAL ARTICLES ══ -->
+    <div class="pub-section" id="journal">
+      <div class="section-head">
+        <span class="section-icon">📄</span>
+        <span class="section-head-title zh">期刊論文</span>
+        <span class="section-head-title en">Journal Articles</span>
+        <span class="section-head-count">10</span>
+      </div>
+
+      <!-- 1 -->
+      <div class="pub-item">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="pub-authors">Namisy, A., <strong>Chen, S.-Y.</strong>, Sritongkam, B., Unartngam, J., Thanarut, C., Chung, W.-H.</div>
+          <div class="pub-title">
+            <a href="https://www.mdpi.com/2223-7747/14/8/1168" target="_blank" rel="noopener">
+              Evaluation of Luffa Rootstocks to Improve Resistance in Bitter Gourd (<em>Momordica charantia</em> L.) Against Fusarium Wilt
+            </a>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Plants</span>
+            <span class="pub-year">2025</span>
+            <a href="https://doi.org/10.3390/plants14081168" target="_blank" class="pub-doi">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="pub-item">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="pub-authors">Namisy, A., <strong>Chen, S.-Y.</strong>, Chung, W.-H.</div>
+          <div class="pub-title">
+            Infection progression and immune responses of <em>Fusarium oxysporum</em> f. sp. <em>luffae</em> in resistant and susceptible luffa genotypes
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Plant Disease</span>
+            <span class="pub-year">2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="pub-item">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="pub-authors">Wu, Y.-J., <strong>Chen, S.-Y.</strong>, Hsu, F.-C., Wu, W.-L., Hsieh, T.-F., Su, J.-F., Lai, Y.-H., Lai, P.-C., Chen, W.-H., Chen, H.-H.</div>
+          <div class="pub-title">
+            <a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" rel="noopener">
+              <em>PeCIN8</em> expression correlates with flower size and resistance to yellow leaf disease in <em>Phalaenopsis</em> orchids
+            </a>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">BMC Plant Biology</span>
+            <span class="pub-year">2023</span>
+            <a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" class="pub-doi">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 ── NEW (inserted) -->
+      <div class="pub-item">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="pub-authors">Hsu, C.-C.*, <strong>Chen, S.-Y.*</strong>, Chiu, S.-Y., Lai, C.-Y., Lai, P.-H., Shehzad, T., Wu, W.-L., Chen, W.-H., Paterson, A. H., Chen, H.-H.</div>
+          <div class="pub-title">
+            <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2024.1416886/full" target="_blank" rel="noopener">
+              Genetic profiles and phenotypic patterns in Taiwanese <em>Phalaenopsis</em> orchids: a two-step phenotype and genotype strategy using modified genetic distance algorithms
+            </a>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Frontiers in Plant Science</span>
+            <span class="pub-year">2024</span>
+            <a href="https://doi.org/10.3389/fpls.2024.1416886" target="_blank" class="pub-doi">DOI</a>
+            <span class="pub-new">NEW</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 (was 4) -->
+      <div class="pub-item">
+        <div class="pub-num">5</div>
+        <div class="pub-body">
+          <div class="pub-authors">Li, Y. D., Liu, Y. C., Jiang, Y. X., Namisy, A., Chung, W.-H., Sun, Y.-H., <strong>Chen, S.-Y.</strong></div>
+          <div class="pub-title">
+            <a href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" rel="noopener">
+              Analyzing genetic diversity in luffa and developing a Fusarium wilt-susceptible linked SNP marker through a single plant genome-wide association (sp-GWAS) study
+            </a>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">BMC Plant Biology</span>
+            <span class="pub-year">2024</span>
+            <a href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" class="pub-doi">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 (was 5) -->
+      <div class="pub-item">
+        <div class="pub-num">6</div>
+        <div class="pub-body">
+          <div class="pub-authors">Hsu, C.-C., <strong>Chen, S.-Y.</strong>, Chiu, S.-Y., Lai, C.-Y., Lai, P.-H., Shehzad, T., Wu, W.-L., Chen, W.-H., Paterson, A. H., Chen, H.-H.</div>
+          <div class="pub-title">
+            <a href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" rel="noopener">
+              High-density genetic map and genome-wide association studies of aesthetic traits in <em>Phalaenopsis</em> orchids
+            </a>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Scientific Reports</span>
+            <span class="pub-year">2022</span>
+            <a href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" class="pub-doi">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 (was 6) -->
+      <div class="pub-item">
+        <div class="pub-num">7</div>
+        <div class="pub-body">
+          <div class="pub-authors">Hung, C.-Y., Tsai, T.-H., <strong>Chen, S.-Y.</strong>, Li, P.-H., Lo, H.-F., Lin, L.-J.</div>
+          <div class="pub-title">
+            Genome-wide association study for whole-genome resequencing-based GWAS reveals loci associated with yellow leaf disease resistance in <em>Phalaenopsis</em>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Plant Disease</span>
+            <span class="pub-year">2022</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 (was 7) -->
+      <div class="pub-item">
+        <div class="pub-num">8</div>
+        <div class="pub-body">
+          <div class="pub-authors"><strong>Chen, S.-Y.</strong>, Chiu, L.-T., Wu, C.-Y., Hung, Y.-C., Ueng, P.-S., Hsieh, W.-H.</div>
+          <div class="pub-title">
+            Cloning and expression of the <em>NPR1</em>-like gene (<em>LaaNPR1</em>) from luffa and its relationship with fungal resistance
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Plant Molecular Biology Reporter</span>
+            <span class="pub-year">2018</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 (was 8) -->
+      <div class="pub-item">
+        <div class="pub-num">9</div>
+        <div class="pub-body">
+          <div class="pub-authors">Huang, C.-S., <strong>Chen, S.-Y.</strong>, Chao, C.-P., Lin, Y.-C., Tsai, M.-H.</div>
+          <div class="pub-title">
+            Genetic diversity and population structure among <em>Fusarium oxysporum</em> f. sp. <em>cubense</em> strains causing Fusarium wilt of banana in Taiwan
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">Plant Pathology</span>
+            <span class="pub-year">2016</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 (was 9) -->
+      <div class="pub-item">
+        <div class="pub-num">10</div>
+        <div class="pub-body">
+          <div class="pub-authors">Hung, T.-H., <strong>Chen, S.-Y.</strong>, Tsai, M.-H., Chao, C.-P.</div>
+          <div class="pub-title">
+            Development of a molecular marker for detection of <em>Fusarium oxysporum</em> f. sp. <em>luffae</em> in luffa seeds and soil
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">European Journal of Plant Pathology</span>
+            <span class="pub-year">2015</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /journal -->
+
+    <!-- ══ BOOKS / CHAPTERS ══ -->
+    <div class="pub-section" id="book">
+      <div class="section-head">
+        <span class="section-icon">📚</span>
+        <span class="section-head-title zh">書籍著作</span>
+        <span class="section-head-title en">Books &amp; Chapters</span>
+        <span class="section-head-count">3</span>
+      </div>
+
+      <div class="book-item">
+        <div class="book-title zh">遺傳與育種學實驗 (上冊)</div>
+        <div class="book-title en">Genetics and Breeding Laboratory Manual (Vol. 1)</div>
+        <div class="book-authors"><strong>Chen, S.-Y.</strong></div>
+        <div class="book-meta">
+          <span class="zh">農藝學系講義，國立中興大學 · 2024</span>
+          <span class="en">Dept. of Agronomy, NCHU · 2024</span>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div class="book-title zh">遺傳與育種學實驗 (下冊)</div>
+        <div class="book-title en">Genetics and Breeding Laboratory Manual (Vol. 2)</div>
+        <div class="book-authors"><strong>Chen, S.-Y.</strong></div>
+        <div class="book-meta">
+          <span class="zh">農藝學系講義，國立中興大學 · 2024</span>
+          <span class="en">Dept. of Agronomy, NCHU · 2024</span>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <div class="book-title zh">生物統計學實驗</div>
+        <div class="book-title en">Biostatistics Laboratory Manual</div>
+        <div class="book-authors"><strong>Chen, S.-Y.</strong></div>
+        <div class="book-meta">
+          <span class="zh">農藝學系講義，國立中興大學 · 2022</span>
+          <span class="en">Dept. of Agronomy, NCHU · 2022</span>
+        </div>
+      </div>
+
+    </div><!-- /book -->
+
+    <!-- ══ CONFERENCE ══ -->
+    <div class="pub-section" id="conf">
+      <div class="section-head">
+        <span class="section-icon">🎤</span>
+        <span class="section-head-title zh">研討會論文</span>
+        <span class="section-head-title en">Conference Proceedings</span>
+      </div>
+      <p style="font-size:15px; color:var(--s500); font-style:italic;">
+        <span class="zh">研討會資料整理中，敬請期待。</span>
+        <span class="en">Conference proceedings will be updated soon.</span>
+      </p>
+    </div>
+
+  </main>
+</div><!-- /body-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-logo">TraitMap<span> Lab</span></div>
+      <div class="f-sub zh" style="margin-top:6px;">作物基因體與精準育種實驗室<br>國立中興大學 農藝學系<br>台中市 402 南區興大路 145 號</div>
+      <div class="f-sub en" style="margin-top:6px;">Crop Genomics &amp; Precision Breeding Laboratory<br>Department of Agronomy, NCHU<br>145 Xingda Rd., South Dist., Taichung 402, Taiwan</div>
+      <div class="f-copy">© 2025 TraitMap Lab, NCHU</div>
+    </div>
+    <div class="f-right">
+      <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
+      <p>+886-4-2284-0777 #703</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleLang() {
+  const html = document.documentElement;
+  const btn = document.getElementById('langBtn');
+  if (html.getAttribute('data-lang') === 'zh') {
+    html.setAttribute('data-lang', 'en'); html.setAttribute('lang', 'en');
+    btn.textContent = '中文';
+  } else {
+    html.setAttribute('data-lang', 'zh'); html.setAttribute('lang', 'zh-TW');
+    btn.textContent = 'English';
+  }
+}
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+// Sidebar active state on scroll
+const sections = ['journal','book','conf'];
+window.addEventListener('scroll', () => {
+  const links = document.querySelectorAll('.sidebar-links a');
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom > 100) {
+        links.forEach(l => l.classList.remove('active'));
+        const target = document.querySelector(`.sidebar-links a[href="#${id}"]`);
+        if (target) target.classList.add('active');
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
