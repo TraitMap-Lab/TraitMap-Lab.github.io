@@ -62,7 +62,7 @@ nav {
 .ph-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 58px); font-weight: 600; color: #fff; line-height: 1.05; margin-bottom: 0.5rem; }
 .ph-sub { font-size: 16px; color: rgba(255,255,255,0.6); }
 
-/* BODY */
+/* LAYOUT */
 .body-wrap { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 5rem; display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
 
 /* SIDEBAR */
@@ -71,79 +71,102 @@ nav {
 .sidebar-links { display: flex; flex-direction: column; gap: 4px; }
 .sidebar-links a {
   font-size: 14px; color: var(--s500); text-decoration: none;
-  padding: 6px 10px; border-radius: 7px; transition: all 0.15s;
-  border: 1px solid transparent;
+  padding: 7px 12px; border-radius: 7px; transition: all 0.15s;
+  border: 1px solid transparent; display: flex; justify-content: space-between; align-items: center;
 }
 .sidebar-links a:hover { color: var(--g600); background: var(--g50); border-color: var(--g100); }
 .sidebar-links a.active { color: var(--g600); background: var(--g50); font-weight: 500; border-color: var(--g100); }
-.sidebar-count { font-size: 12px; color: var(--s300); margin-left: 4px; }
+.sidebar-count {
+  font-size: 12px; font-weight: 600; color: var(--g600);
+  background: var(--g100); border-radius: 10px; padding: 1px 7px;
+}
 
-/* SECTIONS */
-.pub-section { margin-bottom: 3rem; }
+/* SECTION */
+.pub-section { margin-bottom: 3.5rem; }
 .section-head {
   display: flex; align-items: center; gap: 12px;
-  margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+  margin-bottom: 1.75rem; padding-bottom: 0.75rem;
   border-bottom: 2px solid var(--g100);
 }
 .section-icon { font-size: 22px; }
-.section-head-title { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--g900); }
+.section-head-title { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--g900); }
 .section-head-count {
   font-size: 13px; font-weight: 500; color: var(--g600);
   background: var(--g50); border: 1px solid var(--g100);
-  border-radius: 20px; padding: 2px 10px;
+  border-radius: 20px; padding: 2px 11px;
 }
 
 /* PUB ITEM */
 .pub-item {
-  display: grid; grid-template-columns: 36px 1fr;
-  gap: 1rem; padding: 1.25rem 0;
+  display: grid; grid-template-columns: 42px 1fr;
+  gap: 1rem; padding: 1.4rem 0;
   border-bottom: 1px solid var(--s100); align-items: start;
+  transition: background 0.15s;
 }
 .pub-item:last-child { border-bottom: none; }
+.pub-item:hover { background: var(--g50); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 8px; }
 .pub-num {
-  font-family: var(--font-display); font-size: 20px; font-weight: 600;
-  color: var(--g100); text-align: right; padding-top: 2px;
-  line-height: 1.3;
+  font-family: var(--font-display); font-size: 22px; font-weight: 600;
+  color: var(--g100); text-align: right; padding-top: 2px; line-height: 1.3;
 }
-.pub-body { }
-.pub-authors { font-size: 15px; color: var(--s500); margin-bottom: 4px; line-height: 1.6; }
-.pub-authors strong { color: var(--g700, #3a5c10); font-weight: 500; }
-.pub-title {
-  font-size: 16px; font-weight: 500; color: var(--g800);
-  line-height: 1.5; margin-bottom: 6px;
-}
+.pub-authors { font-size: 15px; color: var(--s500); margin-bottom: 5px; line-height: 1.65; }
+.pub-authors strong { color: #3a5c10; font-weight: 600; }
+.pub-title { font-size: 16px; font-weight: 500; color: var(--g800); line-height: 1.5; margin-bottom: 8px; }
 .pub-title a { color: var(--g800); text-decoration: none; transition: color 0.2s; }
 .pub-title a:hover { color: var(--t600); text-decoration: underline; }
-.pub-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
-.pub-journal {
-  font-size: 14px; font-style: italic; color: var(--s500);
-}
+.pub-meta { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.pub-journal { font-size: 14px; font-style: italic; color: var(--s500); }
 .pub-year {
   font-size: 13px; font-weight: 500; color: #fff;
   background: var(--g400); border-radius: 4px; padding: 1px 8px;
 }
-.pub-doi {
+.pub-badge {
+  font-size: 12px; font-weight: 600; color: #fff;
+  border-radius: 4px; padding: 1px 8px; letter-spacing: 0.04em;
+}
+.badge-new { background: var(--t400); }
+.badge-award { background: #b45309; }
+.badge-corresponding { background: var(--g600); }
+.pub-link {
   font-size: 13px; color: var(--t600); text-decoration: none;
-  border: 1px solid var(--t200); border-radius: 4px; padding: 1px 8px;
+  border: 1px solid var(--t200); border-radius: 4px; padding: 1px 9px;
   transition: all 0.2s;
 }
-.pub-doi:hover { background: var(--t50); }
-.pub-new {
-  font-size: 12px; font-weight: 600; color: #fff;
-  background: var(--t400); border-radius: 4px; padding: 1px 8px;
-  letter-spacing: 0.05em;
-}
+.pub-link:hover { background: var(--t50); }
 
-/* BOOK / CHAPTER */
+/* BOOK ITEM */
 .book-item {
-  padding: 1.25rem 1.5rem;
-  background: #fff; border: 1px solid var(--s100);
-  border-radius: var(--radius); margin-bottom: 12px;
-  border-left: 4px solid var(--g200);
+  padding: 1.25rem 1.5rem; background: #fff;
+  border: 1px solid var(--s100); border-radius: var(--radius);
+  margin-bottom: 12px; border-left: 4px solid var(--g200);
 }
-.book-title { font-size: 16px; font-weight: 500; color: var(--g800); margin-bottom: 6px; }
+.book-title { font-size: 16px; font-weight: 500; color: var(--g800); margin-bottom: 6px; line-height: 1.5; }
+.book-title a { color: var(--g800); text-decoration: none; }
+.book-title a:hover { color: var(--t600); text-decoration: underline; }
 .book-authors { font-size: 15px; color: var(--s500); margin-bottom: 4px; }
+.book-authors strong { color: #3a5c10; font-weight: 600; }
 .book-meta { font-size: 14px; color: var(--s500); }
+
+/* CONFERENCE TABLE */
+.conf-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.conf-table th {
+  background: var(--g50); color: var(--g800);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--g100);
+}
+.conf-table td { padding: 12px 14px; border-bottom: 1px solid var(--s100); vertical-align: top; line-height: 1.6; color: var(--s700); }
+.conf-table tr:last-child td { border-bottom: none; }
+.conf-table tr:hover td { background: var(--g50); }
+.conf-year { font-size: 13px; font-weight: 500; color: var(--g600); white-space: nowrap; }
+.conf-award { font-size: 12px; font-weight: 600; color: #b45309; background: #fef3c7; border-radius: 4px; padding: 1px 7px; white-space: nowrap; }
+.conf-seminar { font-size: 13px; color: var(--s300); }
+
+/* OTHERS TABLE */
+.others-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.others-table th { background: var(--g50); color: var(--g800); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--g100); }
+.others-table td { padding: 12px 14px; border-bottom: 1px solid var(--s100); vertical-align: top; line-height: 1.6; color: var(--s700); }
+.others-table tr:last-child td { border-bottom: none; }
+.others-table tr:hover td { background: var(--g50); }
 
 /* FOOTER */
 footer { background: var(--g900); padding: 3rem 2rem; }
@@ -168,6 +191,8 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     padding: 1.25rem 2rem 1.75rem; gap: 1.1rem; z-index: 199;
   }
   .nav-menu-btn { display: block; }
+  .conf-table, .others-table { font-size: 13px; }
+  .conf-table th, .conf-table td, .others-table th, .others-table td { padding: 8px 10px; }
   footer .footer-inner { flex-direction: column; }
 }
 </style>
@@ -179,7 +204,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   <a href="index.html" class="nav-brand">
     <span class="nav-brand-en">TraitMap Lab</span>
     <span class="nav-brand-zh zh">作物基因體與精準育種實驗室</span>
-    <span class="nav-brand-zh en" style="display:none!important; font-size:12px;">Crop Genomics &amp; Precision Breeding</span>
+    <span class="nav-brand-zh en" style="display:none!important;">Crop Genomics &amp; Precision Breeding</span>
   </a>
   <div class="nav-right">
     <ul class="nav-links" id="navLinks">
@@ -199,8 +224,8 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     <p class="ph-label">TraitMap Lab</p>
     <h1 class="ph-title zh">論文與著作</h1>
     <h1 class="ph-title en">Publications</h1>
-    <p class="ph-sub zh">期刊論文、書籍章節及研討會論文</p>
-    <p class="ph-sub en">Journal articles, book chapters, and conference proceedings</p>
+    <p class="ph-sub zh">期刊論文、書籍著作、研討會海報 &amp; 學生得獎</p>
+    <p class="ph-sub en">Journal articles, books, conference posters &amp; student awards</p>
   </div>
 </div>
 
@@ -211,18 +236,20 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     <div class="sidebar-title en">Jump to</div>
     <div class="sidebar-links">
       <a href="#journal" class="active">
-        <span class="zh">期刊論文</span>
-        <span class="en">Journal</span>
-        <span class="sidebar-count">10</span>
+        <span class="zh">期刊論文</span><span class="en">Journals</span>
+        <span class="sidebar-count">14</span>
       </a>
       <a href="#book">
-        <span class="zh">書籍著作</span>
-        <span class="en">Books</span>
-        <span class="sidebar-count">3</span>
+        <span class="zh">書籍著作</span><span class="en">Books</span>
+        <span class="sidebar-count">1</span>
       </a>
       <a href="#conf">
-        <span class="zh">研討會論文</span>
-        <span class="en">Conference</span>
+        <span class="zh">研討會海報</span><span class="en">Posters</span>
+        <span class="sidebar-count">10</span>
+      </a>
+      <a href="#others">
+        <span class="zh">學生得獎</span><span class="en">Awards</span>
+        <span class="sidebar-count">2</span>
       </a>
     </div>
   </aside>
@@ -230,29 +257,26 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   <!-- MAIN -->
   <main>
 
-    <!-- ══ JOURNAL ARTICLES ══ -->
+    <!-- ═══ JOURNAL ARTICLES ═══ -->
     <div class="pub-section" id="journal">
       <div class="section-head">
         <span class="section-icon">📄</span>
         <span class="section-head-title zh">期刊論文</span>
         <span class="section-head-title en">Journal Articles</span>
-        <span class="section-head-count">10</span>
+        <span class="section-head-count">14</span>
       </div>
 
       <!-- 1 -->
       <div class="pub-item">
         <div class="pub-num">1</div>
         <div class="pub-body">
-          <div class="pub-authors">Namisy, A., <strong>Chen, S.-Y.</strong>, Sritongkam, B., Unartngam, J., Thanarut, C., Chung, W.-H.</div>
-          <div class="pub-title">
-            <a href="https://www.mdpi.com/2223-7747/14/8/1168" target="_blank" rel="noopener">
-              Evaluation of Luffa Rootstocks to Improve Resistance in Bitter Gourd (<em>Momordica charantia</em> L.) Against Fusarium Wilt
-            </a>
-          </div>
+          <div class="pub-authors">Ling-Yu Chen, Yen-Hsiang Huang, Chung-Feng Kao, Yan-Jeng Wu, Ting-Fang Hsieh, Jiunn-Feng Su, Yung-Hsiang Lai, Pen-Chih Lai, Yung-Yu Lin, Te-Cheng Lin, Wen-Huei Chen, Hong-Hwa Chen and <strong>Shu-Yun Chen</strong>.</div>
+          <div class="pub-title">Whole-genome resequencing-based GWAS reveals loci associated with yellow leaf disease resistance in <em>Phalaenopsis</em>.</div>
           <div class="pub-meta">
-            <span class="pub-journal">Plants</span>
-            <span class="pub-year">2025</span>
-            <a href="https://doi.org/10.3390/plants14081168" target="_blank" class="pub-doi">DOI</a>
+            <span class="pub-journal">Scientia Horticulturae</span>
+            <span class="pub-year">2026</span>
+            <span class="pub-badge badge-new">NEW</span>
+            <span style="font-size:13px;color:var(--s500);">359:114767</span>
           </div>
         </div>
       </div>
@@ -261,13 +285,12 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       <div class="pub-item">
         <div class="pub-num">2</div>
         <div class="pub-body">
-          <div class="pub-authors">Namisy, A., <strong>Chen, S.-Y.</strong>, Chung, W.-H.</div>
-          <div class="pub-title">
-            Infection progression and immune responses of <em>Fusarium oxysporum</em> f. sp. <em>luffae</em> in resistant and susceptible luffa genotypes
-          </div>
+          <div class="pub-authors">Pei-Hsiu Kao, Supaporn Baiya, Chong-Wei Lee, Chia-Wen Tseng, <strong>Shu-Yun Chen</strong>, Yen-Hsiang Huang and Chung-Feng Kao.</div>
+          <div class="pub-title">Identification of key drought-tolerant genes in soybean using an integrative data-driven feature engineering pipeline.</div>
           <div class="pub-meta">
-            <span class="pub-journal">Plant Disease</span>
-            <span class="pub-year">2024</span>
+            <span class="pub-journal">Journal of Big Data</span>
+            <span class="pub-year">2025</span>
+            <span style="font-size:13px;color:var(--s500);">12:68</span>
           </div>
         </div>
       </div>
@@ -276,190 +299,361 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       <div class="pub-item">
         <div class="pub-num">3</div>
         <div class="pub-body">
-          <div class="pub-authors">Wu, Y.-J., <strong>Chen, S.-Y.</strong>, Hsu, F.-C., Wu, W.-L., Hsieh, T.-F., Su, J.-F., Lai, Y.-H., Lai, P.-C., Chen, W.-H., Chen, H.-H.</div>
-          <div class="pub-title">
-            <a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" rel="noopener">
-              <em>PeCIN8</em> expression correlates with flower size and resistance to yellow leaf disease in <em>Phalaenopsis</em> orchids
-            </a>
-          </div>
+          <div class="pub-authors">Po-Hsien Lu, Yung-Chang Lai, and <strong>Shu-Yun Chen</strong>.</div>
+          <div class="pub-title">Advances in Genome-Wide Association Study (GWAS) on the Sweetpotato (<em>Ipomoea batatas</em>).</div>
           <div class="pub-meta">
-            <span class="pub-journal">BMC Plant Biology</span>
-            <span class="pub-year">2023</span>
-            <a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" class="pub-doi">DOI</a>
+            <span class="pub-journal">Horticulture Research (or equivalent)</span>
+            <span class="pub-year">2025</span>
+            <span style="font-size:13px;color:var(--s500);">72(1): 59–80</span>
           </div>
         </div>
       </div>
 
-      <!-- 4 ── NEW (inserted) -->
+      <!-- 4 — NEW (inserted per request) -->
       <div class="pub-item">
         <div class="pub-num">4</div>
         <div class="pub-body">
-          <div class="pub-authors">Hsu, C.-C.*, <strong>Chen, S.-Y.*</strong>, Chiu, S.-Y., Lai, C.-Y., Lai, P.-H., Shehzad, T., Wu, W.-L., Chen, W.-H., Paterson, A. H., Chen, H.-H.</div>
+          <div class="pub-authors">Chia-Chi Hsu*, <strong>Shu-Yun Chen*</strong>, Shang-Yi Chiu, Cheng-Yuan Lai, Pei-Han Lai, Tariq Shehzad, Wen-Luan Wu, Wen-Huei Chen, Andrew H. Paterson, Hong-Hwa Chen.</div>
           <div class="pub-title">
             <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2024.1416886/full" target="_blank" rel="noopener">
-              Genetic profiles and phenotypic patterns in Taiwanese <em>Phalaenopsis</em> orchids: a two-step phenotype and genotype strategy using modified genetic distance algorithms
+              Genetic profiles and phenotypic patterns in Taiwanese <em>Phalaenopsis</em> orchids: a two-step phenotype and genotype strategy using modified genetic distance algorithms.
             </a>
           </div>
           <div class="pub-meta">
             <span class="pub-journal">Frontiers in Plant Science</span>
             <span class="pub-year">2024</span>
-            <a href="https://doi.org/10.3389/fpls.2024.1416886" target="_blank" class="pub-doi">DOI</a>
-            <span class="pub-new">NEW</span>
+            <span style="font-size:13px;color:var(--s500);">15:1416886</span>
+            <a href="https://doi.org/10.3389/fpls.2024.1416886" target="_blank" class="pub-link">DOI</a>
           </div>
         </div>
       </div>
 
-      <!-- 5 (was 4) -->
+      <!-- 5 -->
       <div class="pub-item">
         <div class="pub-num">5</div>
         <div class="pub-body">
-          <div class="pub-authors">Li, Y. D., Liu, Y. C., Jiang, Y. X., Namisy, A., Chung, W.-H., Sun, Y.-H., <strong>Chen, S.-Y.</strong></div>
+          <div class="pub-authors">Li, Y. D., Liu, Y. C., Jiang, Y. X., Namisy, A., Chung, W. H., Sun, Y. H., &amp; <strong>Chen, S. Y.</strong></div>
           <div class="pub-title">
             <a href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" rel="noopener">
-              Analyzing genetic diversity in luffa and developing a Fusarium wilt-susceptible linked SNP marker through a single plant genome-wide association (sp-GWAS) study
+              Analyzing genetic diversity in luffa and developing a Fusarium wilt-susceptible linked SNP marker through a single plant genome-wide association (sp-GWAS) study.
             </a>
           </div>
           <div class="pub-meta">
             <span class="pub-journal">BMC Plant Biology</span>
             <span class="pub-year">2024</span>
-            <a href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" class="pub-doi">DOI</a>
+            <span style="font-size:13px;color:var(--s500);">24(1):307</span>
+            <a href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" class="pub-link">DOI</a>
           </div>
         </div>
       </div>
 
-      <!-- 6 (was 5) -->
+      <!-- 6 -->
       <div class="pub-item">
         <div class="pub-num">6</div>
         <div class="pub-body">
-          <div class="pub-authors">Hsu, C.-C., <strong>Chen, S.-Y.</strong>, Chiu, S.-Y., Lai, C.-Y., Lai, P.-H., Shehzad, T., Wu, W.-L., Chen, W.-H., Paterson, A. H., Chen, H.-H.</div>
+          <div class="pub-authors">Namisy, A., <strong>Chen, S. Y.</strong>, Huang, J. H., Unartngam, J., Thanarut, C., &amp; Chung, W. H.</div>
+          <div class="pub-title">Histopathology and quantification of green fluorescent protein-tagged <em>Fusarium oxysporum</em> f. sp. <em>luffae</em> isolate in resistant and susceptible <em>Luffa</em> germplasm.</div>
+          <div class="pub-meta">
+            <span class="pub-journal">Microbiology Spectrum</span>
+            <span class="pub-year">2024</span>
+            <span style="font-size:13px;color:var(--s500);">e03127-23</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="pub-item">
+        <div class="pub-num">7</div>
+        <div class="pub-body">
+          <div class="pub-authors">Wu, Y. J., <strong>Chen, S. Y.</strong>, Hsu, F. C., Wu, W. L., Hsieh, T. F., Su, J. F., ... &amp; Chen, H. H.</div>
+          <div class="pub-title">
+            <a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" rel="noopener">
+              <em>PeCIN8</em> expression correlates with flower size and resistance to yellow leaf disease in <em>Phalaenopsis</em> orchids.
+            </a>
+          </div>
+          <div class="pub-meta">
+            <span class="pub-journal">BMC Plant Biology</span>
+            <span class="pub-year">2023</span>
+            <span style="font-size:13px;color:var(--s500);">23(1):545</span>
+            <a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" class="pub-link">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="pub-item">
+        <div class="pub-num">8</div>
+        <div class="pub-body">
+          <div class="pub-authors">Chia-Chi Hsu, <strong>Shu-Yun Chen</strong>, Shang-Yi Chiu, Cheng-Yuan Lai, Pei-Han Lai, Tariq Shehzad, Wen-Luan Wu, Wen-Huei Chen, Andrew H. Paterson &amp; Hong-Hwa Chen*.</div>
           <div class="pub-title">
             <a href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" rel="noopener">
-              High-density genetic map and genome-wide association studies of aesthetic traits in <em>Phalaenopsis</em> orchids
+              High-density genetic map and genome-wide association studies of aesthetic traits in <em>Phalaenopsis</em> orchids.
             </a>
           </div>
           <div class="pub-meta">
             <span class="pub-journal">Scientific Reports</span>
             <span class="pub-year">2022</span>
-            <a href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" class="pub-doi">DOI</a>
+            <span style="font-size:13px;color:var(--s500);">12:3346</span>
+            <a href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" class="pub-link">DOI</a>
           </div>
         </div>
       </div>
 
-      <!-- 7 (was 6) -->
-      <div class="pub-item">
-        <div class="pub-num">7</div>
-        <div class="pub-body">
-          <div class="pub-authors">Hung, C.-Y., Tsai, T.-H., <strong>Chen, S.-Y.</strong>, Li, P.-H., Lo, H.-F., Lin, L.-J.</div>
-          <div class="pub-title">
-            Genome-wide association study for whole-genome resequencing-based GWAS reveals loci associated with yellow leaf disease resistance in <em>Phalaenopsis</em>
-          </div>
-          <div class="pub-meta">
-            <span class="pub-journal">Plant Disease</span>
-            <span class="pub-year">2022</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8 (was 7) -->
-      <div class="pub-item">
-        <div class="pub-num">8</div>
-        <div class="pub-body">
-          <div class="pub-authors"><strong>Chen, S.-Y.</strong>, Chiu, L.-T., Wu, C.-Y., Hung, Y.-C., Ueng, P.-S., Hsieh, W.-H.</div>
-          <div class="pub-title">
-            Cloning and expression of the <em>NPR1</em>-like gene (<em>LaaNPR1</em>) from luffa and its relationship with fungal resistance
-          </div>
-          <div class="pub-meta">
-            <span class="pub-journal">Plant Molecular Biology Reporter</span>
-            <span class="pub-year">2018</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9 (was 8) -->
+      <!-- 9 -->
       <div class="pub-item">
         <div class="pub-num">9</div>
         <div class="pub-body">
-          <div class="pub-authors">Huang, C.-S., <strong>Chen, S.-Y.</strong>, Chao, C.-P., Lin, Y.-C., Tsai, M.-H.</div>
-          <div class="pub-title">
-            Genetic diversity and population structure among <em>Fusarium oxysporum</em> f. sp. <em>cubense</em> strains causing Fusarium wilt of banana in Taiwan
-          </div>
+          <div class="pub-authors"><strong>Shu-Yun Chen</strong>, Yan-Jeng Wu, Ting-Fang Hsieh, Jiunn-Feng Su, Wei-Chiang Shen, Yung-Hsiang Lai, Pen-Chih Lai, Wen-Huei Chen and Hong-Hwa Chen.</div>
+          <div class="pub-title">Develop an efficient inoculation technique for <em>Fusarium solani</em> isolate "TJP-2178-10" pathogeny assessment in <em>Phalaenopsis</em> orchids.</div>
           <div class="pub-meta">
-            <span class="pub-journal">Plant Pathology</span>
-            <span class="pub-year">2016</span>
+            <span class="pub-journal">Botanical Studies</span>
+            <span class="pub-year">2021</span>
+            <span style="font-size:13px;color:var(--s500);">62:4–11</span>
           </div>
         </div>
       </div>
 
-      <!-- 10 (was 9) -->
+      <!-- 10 -->
       <div class="pub-item">
         <div class="pub-num">10</div>
         <div class="pub-body">
-          <div class="pub-authors">Hung, T.-H., <strong>Chen, S.-Y.</strong>, Tsai, M.-H., Chao, C.-P.</div>
-          <div class="pub-title">
-            Development of a molecular marker for detection of <em>Fusarium oxysporum</em> f. sp. <em>luffae</em> in luffa seeds and soil
-          </div>
+          <div class="pub-authors">Chia-Chi Hsu, <strong>Shu-Yun Chen</strong>, Pei-Han Lai, Yu-Yun Hsiao, Wen-Chieh Tsai, Zhong-Jian Liu, Mei-Chu Chung, Olivier Panaud and Hong-Hwa Chen.</div>
+          <div class="pub-title">Identification of high-copy number long terminal repeat retrotransposons and their expansion in <em>Phalaenopsis</em> orchids.</div>
           <div class="pub-meta">
-            <span class="pub-journal">European Journal of Plant Pathology</span>
-            <span class="pub-year">2015</span>
+            <span class="pub-journal">BMC Genomics</span>
+            <span class="pub-year">2020</span>
+            <span style="font-size:13px;color:var(--s500);">21:807–820</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="pub-item">
+        <div class="pub-num">11</div>
+        <div class="pub-body">
+          <div class="pub-authors"><strong>Shu-Yun Chen</strong>, Mei-Hsiu Su, Karl A. Kremling, Nicholas K. Lepak, M. Cinta Romay, Qi Sun, Peter J. Bradbury, Edward S. Buckler and Hsin-Mei Ku.</div>
+          <div class="pub-title">Identification of miRNA-eQTLs in maize mature leaf by GWAS.</div>
+          <div class="pub-meta">
+            <span class="pub-journal">BMC Genomics</span>
+            <span class="pub-year">2020</span>
+            <span style="font-size:13px;color:var(--s500);">21:689–702</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="pub-item">
+        <div class="pub-num">12</div>
+        <div class="pub-body">
+          <div class="pub-authors">Yi-Lun Liao, Wen-Shiin Lin and <strong>Shu-Yun Chen</strong>. <span style="font-size:13px;color:var(--g600);">[通訊作者]</span></div>
+          <div class="pub-title">'Taichung No. 5': A Short Plant Height with High Grain Yield Job's Tears Cultivar.</div>
+          <div class="pub-meta">
+            <span class="pub-journal">HortScience (American Society for Horticultural Science)</span>
+            <span class="pub-year">2019</span>
+            <span style="font-size:13px;color:var(--s500);">52:761–762</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="pub-item">
+        <div class="pub-num">13</div>
+        <div class="pub-body">
+          <div class="pub-authors">Karl A.G. Kremling, <strong>Shu-Yun Chen</strong>, Mei-Hsiu Su, Nicholas K. Lepak, M. Cinta Romay, Kelly L. Swarts, Fei Lu, Anne Lorant, Peter J. Bradbury, Edward S. Buckler.</div>
+          <div class="pub-title">Dysregulation of expression correlates with rare-allele burden and fitness loss in maize.</div>
+          <div class="pub-meta">
+            <span class="pub-journal">Nature</span>
+            <span class="pub-year">2018</span>
+            <span style="font-size:13px;color:var(--s500);">555:520–523</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="pub-item">
+        <div class="pub-num">14</div>
+        <div class="pub-body">
+          <div class="pub-authors">Wei-Ting Liu, Peng-Wen Chen, Li-Chi Chen, Chia-Chun Yang, <strong>Shu-Yun Chen</strong>, Guan-Fu Huang, Tzu-Che Lin, Hsin-Mei Ku and Jeremy J.W. Chen.</div>
+          <div class="pub-title">Suppressive Effect of MicroRNA319 Expression on rice plant height.</div>
+          <div class="pub-meta">
+            <span class="pub-journal">Theoretical and Applied Genetics</span>
+            <span class="pub-year">2017</span>
+            <span style="font-size:13px;color:var(--s500);">130(7):1507–1518</span>
           </div>
         </div>
       </div>
 
     </div><!-- /journal -->
 
-    <!-- ══ BOOKS / CHAPTERS ══ -->
+
+    <!-- ═══ BOOKS ═══ -->
     <div class="pub-section" id="book">
       <div class="section-head">
         <span class="section-icon">📚</span>
         <span class="section-head-title zh">書籍著作</span>
         <span class="section-head-title en">Books &amp; Chapters</span>
-        <span class="section-head-count">3</span>
+        <span class="section-head-count">1</span>
       </div>
 
       <div class="book-item">
-        <div class="book-title zh">遺傳與育種學實驗 (上冊)</div>
-        <div class="book-title en">Genetics and Breeding Laboratory Manual (Vol. 1)</div>
-        <div class="book-authors"><strong>Chen, S.-Y.</strong></div>
-        <div class="book-meta">
-          <span class="zh">農藝學系講義，國立中興大學 · 2024</span>
-          <span class="en">Dept. of Agronomy, NCHU · 2024</span>
+        <div class="pub-meta" style="margin-bottom:8px;">
+          <span class="pub-year">2025</span>
         </div>
-      </div>
-
-      <div class="book-item">
-        <div class="book-title zh">遺傳與育種學實驗 (下冊)</div>
-        <div class="book-title en">Genetics and Breeding Laboratory Manual (Vol. 2)</div>
-        <div class="book-authors"><strong>Chen, S.-Y.</strong></div>
-        <div class="book-meta">
-          <span class="zh">農藝學系講義，國立中興大學 · 2024</span>
-          <span class="en">Dept. of Agronomy, NCHU · 2024</span>
+        <div class="book-title">
+          <a href="https://www.cabidigitallibrary.org/doi/abs/10.1079/9781800627895.0008" target="_blank" rel="noopener">
+            Applications and Future Perspectives of Genome-Wide Association Studies in Horticultural Flower Crops
+          </a>
         </div>
-      </div>
-
-      <div class="book-item">
-        <div class="book-title zh">生物統計學實驗</div>
-        <div class="book-title en">Biostatistics Laboratory Manual</div>
-        <div class="book-authors"><strong>Chen, S.-Y.</strong></div>
-        <div class="book-meta">
-          <span class="zh">農藝學系講義，國立中興大學 · 2022</span>
-          <span class="en">Dept. of Agronomy, NCHU · 2022</span>
-        </div>
+        <div class="book-authors"><strong>Chen, S.-Y.</strong> et al.</div>
+        <div class="book-meta">CABI Digital Library · 10.1079/9781800627895.0008</div>
       </div>
 
     </div><!-- /book -->
 
-    <!-- ══ CONFERENCE ══ -->
+
+    <!-- ═══ CONFERENCE POSTERS ═══ -->
     <div class="pub-section" id="conf">
       <div class="section-head">
         <span class="section-icon">🎤</span>
-        <span class="section-head-title zh">研討會論文</span>
-        <span class="section-head-title en">Conference Proceedings</span>
+        <span class="section-head-title zh">研討會海報</span>
+        <span class="section-head-title en">Conference Posters</span>
+        <span class="section-head-count">10</span>
       </div>
-      <p style="font-size:15px; color:var(--s500); font-style:italic;">
-        <span class="zh">研討會資料整理中，敬請期待。</span>
-        <span class="en">Conference proceedings will be updated soon.</span>
-      </p>
-    </div>
+
+      <table class="conf-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="zh">年份</th><th class="en">Year</th>
+            <th class="zh">題目</th><th class="en">Title</th>
+            <th class="zh">研討會</th><th class="en">Seminar</th>
+            <th class="zh">作者</th><th class="en">Authors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="conf-year">2025</td>
+            <td>
+              探討台農57與台農66甘藷的氮素分配模式與氮肥使用效率之差異
+              <br><span class="conf-award">佳作</span>
+            </td>
+            <td class="conf-seminar">臺灣園藝學會114年會暨論文宣讀</td>
+            <td>陳柏儒、陸柏憲、<strong>鄭舒允</strong></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="conf-year">2025</td>
+            <td>Genetic exploration and Genome-Wide Association Study of Leaf Morphology in Sweet Potato Germplasm from the TARI Chiayi Branch, Taiwan.</td>
+            <td class="conf-seminar">ABS2025</td>
+            <td>Chong-Wei Lee, Po-Hsien Lu, and <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="conf-year">2025</td>
+            <td>Identification of molecular markers associated with growth and floral traits in hydrangea through GWAS analysis.</td>
+            <td class="conf-seminar">ABS2025</td>
+            <td>Chang-Yin Chu, <strong>Shu-Yun Chen</strong> and Chin-Mu Chen</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td class="conf-year">2025</td>
+            <td>A proposed model of the early resistance gene expression pathway in Luffa against <em>Fusarium oxysporum</em> strain FOLUST.</td>
+            <td class="conf-seminar">ABS2025</td>
+            <td>Che-Han Chu, Yu-Xuan Jiang, Yu-Chi Liu, Mei-Hsiu Su, Ahmed Namisy, Wen-Hsin Chung, Hsin-Hung Lin, and <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td class="conf-year">2025</td>
+            <td>Discovery of seven reproducible markers linked to mid-to-late Stage Fusarium Wilt in Luffa through Genome-Wide Association Study.</td>
+            <td class="conf-seminar">ABS2025</td>
+            <td>Yu-Chi Liu, Yu-Xuan Jiang, Ahmed Namisy, Wen-Hsin Chung and <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td class="conf-year">2025</td>
+            <td>Transcriptome profiling identifies cell wall biosynthesis as a key early defense mechanism in luffa against fusarium wilt.</td>
+            <td class="conf-seminar">ABS2025</td>
+            <td>Yu-Xuan Jiang, Che-Han Chu, Yu-Chi Liu, Mei-Hsin Su, Ahmed Namisy, Wen-Hsin Chung, Hsin-Hung Lin and <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td class="conf-year">2025</td>
+            <td>
+              Unveiling Key genes underlying High-market value traits in bitter gourd through integrated computer vision and GWAS approaches.
+              <br><span class="conf-award">Best Poster Award 🏆</span>
+            </td>
+            <td class="conf-seminar">ABS2025</td>
+            <td>Chi-Chen Wei, Chuang-Kai Chueh, Sheng-Chih Chang and <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td class="conf-year">2025</td>
+            <td>Genetic Structure and Phylogenetic Analysis of 183 Sweet Potato Germplasm from TARI Chiayi Branch.</td>
+            <td class="conf-seminar">2025 International Symposium on Genomics, Evolution and Biodiversity</td>
+            <td>Chong-Wei Lee, Po-Hsien Lu, and <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td class="conf-year">2024</td>
+            <td>
+              Genetic Exploration and Genome-Wide Identification of Resistance Genes Related to Yellow Leaf Disease in <em>Phalaenopsis</em> Orchids.
+              <br><span class="conf-award">3rd Best Poster Award 🥉</span>
+            </td>
+            <td class="conf-seminar">The 32nd Plant &amp; Animal Genome Conference</td>
+            <td>Ling-Yu Chen, Yen-Hsiang Huang, Yan-Jeng Wu, Wen-Huei Chen, Hong-Hwa Chen, <strong>Shu-Yun Chen</strong></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td class="conf-year">2024</td>
+            <td>A multiple phenotypes imputation method for genetic diversity and core collection in Taiwanese vegetable soybean.</td>
+            <td class="conf-seminar">ASA, CSSA, SSSA International Annual Meeting</td>
+            <td>Ling-Yu Chen, Yen-Hsiang Huang, Yan-Jeng Wu, Wen-Huei Chen, Hong-Hwa Chen, <strong>Shu-Yun Chen</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /conf -->
+
+
+    <!-- ═══ STUDENT AWARDS ═══ -->
+    <div class="pub-section" id="others">
+      <div class="section-head">
+        <span class="section-icon">🏅</span>
+        <span class="section-head-title zh">學生得獎</span>
+        <span class="section-head-title en">Student Awards</span>
+        <span class="section-head-count">2</span>
+      </div>
+
+      <table class="others-table">
+        <thead>
+          <tr>
+            <th class="zh">年份</th><th class="en">Year</th>
+            <th class="zh">學生</th><th class="en">Student</th>
+            <th class="zh">獎項</th><th class="en">Award</th>
+            <th class="zh">名次</th><th class="en">Rank</th>
+            <th class="zh">論文題目</th><th class="en">Thesis Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025</td>
+            <td>陳令瑜</td>
+            <td class="zh">台灣植物學會　最佳植物學碩士論文</td>
+            <td class="en">Taiwan Botanical Society — Best M.S. Thesis in Plant Biology</td>
+            <td><span class="conf-award">佳作</span></td>
+            <td>基因型數據集篩選對蝴蝶蘭黃葉病抗性之全基因體關聯分析結果之影響</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td>魏琪蓁</td>
+            <td class="zh">台灣植物學會　最佳植物學碩士論文</td>
+            <td class="en">Taiwan Botanical Society — Best M.S. Thesis in Plant Biology</td>
+            <td><span class="conf-award">佳作</span></td>
+            <td>利用電腦輔助判讀苦瓜花性與果實性狀的遺傳模式及相關QTL的探勘</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /others -->
 
   </main>
 </div><!-- /body-wrap -->
@@ -495,18 +689,19 @@ function toggleLang() {
 document.querySelectorAll('#navLinks a').forEach(a => {
   a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
 });
-// Sidebar active state on scroll
-const sections = ['journal','book','conf'];
+// Sidebar scroll highlight
+const sections = ['journal','book','conf','others'];
 window.addEventListener('scroll', () => {
   const links = document.querySelectorAll('.sidebar-links a');
   for (const id of sections) {
     const el = document.getElementById(id);
     if (el) {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= 100 && rect.bottom > 100) {
+      if (rect.top <= 120 && rect.bottom > 120) {
         links.forEach(l => l.classList.remove('active'));
-        const target = document.querySelector(`.sidebar-links a[href="#${id}"]`);
-        if (target) target.classList.add('active');
+        const t = document.querySelector(`.sidebar-links a[href="#${id}"]`);
+        if (t) t.classList.add('active');
+        break;
       }
     }
   }
