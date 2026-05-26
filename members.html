@@ -84,7 +84,13 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem; }
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
-.pi-photo img { width: 100%; height: 100%; object-position: top center; border-radius: 50%; }
+.pi-photo img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center 20%; 
+  border-radius: 50%; 
+}
 .pi-initial { font-family: var(--font-display); font-size: 72px; font-weight: 600; color: var(--g100); }
 .pi-name { font-family: var(--font-display); font-size: 32px; font-weight: 600; color: var(--g900); line-height: 1.1; }
 .pi-name-en { font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--s300); margin-bottom: 0.5rem; display: block; }
@@ -119,7 +125,12 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem; }
   display: flex; align-items: center; justify-content: center;
   overflow: hidden; position: relative;
 }
-.member-photo img { width: 100%; height: 100%; object-position: top center; }
+.member-photo img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center 20%; 
+}
 .member-photo-placeholder {
   font-family: var(--font-display); font-size: 52px; font-weight: 600; color: var(--g100);
 }
@@ -182,7 +193,6 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand">
     <span class="nav-brand-en">TraitMap Lab</span>
@@ -201,7 +211,6 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
     <p class="ph-label">TraitMap Lab</p>
@@ -212,12 +221,10 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
   </div>
 </div>
 
-<!-- PI -->
 <section>
   <p class="s-label">Principal Investigator</p>
   <div class="pi-card">
     <div class="pi-photo">
-      <!-- Replace with: <img src="images/chen.jpg" alt="Prof. Shu-Yun Chen"> -->
       <img src="images/photo.jpg" alt="Prof. Shu-Yun Chen">
     </div>
     <div>
@@ -243,14 +250,12 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
 
 <div class="divider"></div>
 
-<!-- GRADUATE STUDENTS -->
 <section id="grad">
   <p class="s-label">Current Members</p>
   <h2 class="s-title zh">🎓 現任研究生</h2>
   <h2 class="s-title en">🎓 Graduate Students</h2>
   <div class="members-grid">
 
-    <!-- 李崇瑋 (碩士生) -->
     <div class="member-card" data-group="grad">
       <div class="member-photo">
         <img src="images/CWL.jpg" alt="李崇瑋">
@@ -276,8 +281,7 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
         </p>
       </div>
     </div>
-	
-    <!--  (碩士生) -->
+    
     <div class="member-card" data-group="grad">
       <div class="member-photo">
         <img src="images/PRC.jpg" alt="陳柏儒">
@@ -304,7 +308,6 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
       </div>
     </div>
 
-    <!-- 朱哲翰 (博士生) -->
     <div class="member-card" data-group="grad">
       <div class="member-photo">
         <img src="images/CHC.jpg" alt="朱哲翰">
@@ -331,7 +334,6 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
       </div>
     </div>
 
-    <!-- Empty slot placeholder -->
     <div class="member-card empty" data-group="grad">
       <div class="member-photo"><span class="member-photo-placeholder">+</span></div>
       <div class="member-body">
@@ -349,7 +351,6 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
 
 <div class="divider"></div>
 
-<!-- UNDERGRADUATES -->
 <section id="ugrad">
   <h2 class="s-title zh">🌱 大學部專題生</h2>
   <h2 class="s-title en">🌱 Undergraduate Researchers</h2>
@@ -386,7 +387,6 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
 
 <div class="divider"></div>
 
-<!-- ALUMNI -->
 <section id="alumni">
   <h2 class="s-title zh">🏅 畢業校友</h2>
   <h2 class="s-title en">🏅 Alumni</h2>
@@ -408,12 +408,9 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
       </div>
     </div>
 
-    <!-- 更多校友請複製卡片 -->
-
-  </div>
+    </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
