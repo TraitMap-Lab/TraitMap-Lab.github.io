@@ -1,27 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 132" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 128" role="img" aria-labelledby="title desc">
   <title id="title">TraitMap Lab trait-to-marker signature</title>
-  <desc id="desc">A minimal crop-to-genomic-marker pathway for TraitMap Lab.</desc>
-  <rect width="220" height="132" rx="8" fill="#F5F3EC"/>
-  <path d="M28 88c26-42 64-58 114-42 19 6 35 6 49-4" fill="none" stroke="#C0DD97" stroke-width="2"/>
-  <path d="M52 87c-11-19-6-40 13-57 12 21 8 43-13 57Z" fill="#EAF3DE" stroke="#5A8F1A" stroke-width="2"/>
-  <path d="M54 85c9-20 13-36 10-50" fill="none" stroke="#5A8F1A" stroke-width="1.4" stroke-linecap="round"/>
-  <g fill="none" stroke="#1D9E75" stroke-linecap="round" stroke-width="2">
-    <path d="M91 38h55"/>
-    <path d="M91 52h55"/>
-    <path d="M91 66h55"/>
-    <path d="M91 80h55"/>
+  <desc id="desc">An abstract pathway from crop trait data to genomic signals and molecular markers.</desc>
+  <rect width="260" height="128" rx="8" fill="#F8F7F3"/>
+  <path d="M28 84C59 46 94 54 126 66C160 79 190 73 232 38" fill="none" stroke="#C0DD97" stroke-width="2.2" stroke-linecap="round"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M39 82h24M39 90h34M39 98h18" stroke="#5A8F1A" stroke-width="2"/>
+    <path d="M94 36h102M94 52h102M94 68h102M94 84h102" stroke="#D9DED1" stroke-width="1.5"/>
+    <path d="M94 52h46M94 68h72M94 84h96" stroke="#1D9E75" stroke-width="2.4"/>
   </g>
   <g fill="#274F0A">
-    <circle cx="103" cy="38" r="3"/>
-    <circle cx="127" cy="52" r="3"/>
-    <circle cx="113" cy="66" r="3"/>
-    <circle cx="138" cy="80" r="3"/>
+    <circle cx="126" cy="52" r="3.5"/>
+    <circle cx="150" cy="68" r="3.5"/>
+    <circle cx="180" cy="84" r="3.5"/>
   </g>
-  <path d="M160 75c8-8 17-8 25 0 8 8 8 18 0 26-8 8-17 8-25 0-8-8-8-18 0-26Z" fill="#E0F5EE" stroke="#0F6E56" stroke-width="2"/>
-  <path d="M167 88h18M176 79v18" stroke="#0F6E56" stroke-width="2" stroke-linecap="round"/>
-  <g fill="#7A7870" font-family="Outfit, Arial, sans-serif" font-size="9" font-weight="600">
-    <text x="27" y="111">Trait</text>
-    <text x="95" y="111">Signal</text>
-    <text x="157" y="111">Marker</text>
+  <g fill="#1D9E75">
+    <circle cx="206" cy="40" r="4"/>
+    <circle cx="224" cy="40" r="4"/>
+    <circle cx="215" cy="57" r="4"/>
+  </g>
+  <g stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round">
+    <path d="M206 40l9 17l9-17" fill="none"/>
+    <path d="M215 57v23"/>
+  </g>
+  <g fill="#494742" font-family="Outfit, Arial, sans-serif" font-size="10" font-weight="600">
+    <text x="35" y="116">TRAIT</text>
+    <text x="118" y="116">GENOMIC SIGNAL</text>
+    <text x="203" y="116">MARKER</text>
   </g>
 </svg>
