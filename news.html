@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — TraitMap Lab</title>
+<meta name="description" content="TraitMap Lab news, announcements, student achievements, and lab updates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Noto+Sans+TC:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --g50:#EAF3DE;--g100:#C0DD97;--g200:#97C459;--g400:#5A8F1A;--g600:#3B6D11;--g800:#274F0A;--g900:#162E05;
+  --t50:#E0F5EE;--t200:#7DDBB9;--t400:#1D9E75;--t600:#0F6E56;
+  --s50:#F5F3EC;--s100:#E2DFD5;--s300:#B8B4A8;--s500:#7A7870;--s700:#494742;
+  --ink:#1e1d1a;
+  --paper:#f8f7f3;
+  --white:#fff;
+  --font-display:'Cormorant Garamond',serif;
+  --font-zh:'Noto Sans TC','Microsoft JhengHei',sans-serif;
+  --font-body:'Outfit','Noto Sans TC',sans-serif;
+  --max:1100px;
+  --radius:8px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); font-size: 16px; background: var(--paper); color: var(--ink); line-height: 1.75; }
+
+[data-lang="zh"] .en { display: none !important; }
+[data-lang="en"] .zh { display: none !important; }
+
+nav {
+  position: sticky; top: 0; z-index: 200;
+  height: 58px; padding: 0 2rem;
+  background: rgba(248,247,243,0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--s100);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+.nav-brand-en { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: 0.05em; color: var(--g800); }
+.nav-brand-zh { font-size: 11px; color: var(--s500); letter-spacing: 0.06em; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 1rem; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--s700); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--g600); font-weight: 600; }
+.lang-btn {
+  font-family: var(--font-body); font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 20px;
+  border: 1px solid var(--s100); background: var(--white);
+  color: var(--s700); cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.lang-btn:hover { border-color: var(--g200); color: var(--g600); background: var(--g50); }
+.nav-menu-btn { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--s700); }
+
+.page-header {
+  background: linear-gradient(150deg, var(--g900), #254f0f 58%, var(--t600));
+  color: #fff; padding: 4.6rem 2rem 3.7rem;
+}
+.page-header-inner { max-width: var(--max); margin: 0 auto; }
+.ph-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--t200); margin-bottom: 0.75rem; }
+.ph-title {
+  font-family: var(--font-zh); font-size: clamp(34px, 5vw, 52px);
+  font-weight: 700; line-height: 1.18; letter-spacing: 0; margin-bottom: 0.7rem;
+}
+.ph-title.en { font-family: var(--font-display); font-weight: 600; line-height: 1.05; }
+.ph-sub { font-size: 16px; color: rgba(255,255,255,0.72); max-width: 660px; }
+
+main { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+.news-list { display: grid; gap: 1.25rem; }
+.news-entry {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 8px 28px rgba(23,46,5,0.06);
+}
+.news-entry-head {
+  display: grid; grid-template-columns: 170px 1fr;
+  gap: 1.7rem; padding: 1.6rem 1.75rem;
+  border-bottom: 1px solid var(--s100);
+}
+.news-date {
+  width: fit-content; min-width: 92px;
+  font-size: 14px; font-weight: 700; color: var(--g800);
+  background: var(--g50); border: 1px solid var(--g100);
+  border-radius: 20px; padding: 5px 16px; text-align: center;
+}
+.news-type { margin-top: 0.7rem; font-size: 12px; font-weight: 600; color: var(--t600); letter-spacing: 0.08em; text-transform: uppercase; }
+.news-title {
+  font-family: var(--font-zh); font-size: clamp(23px, 3vw, 32px);
+  font-weight: 700; line-height: 1.45; color: var(--g900); letter-spacing: 0; margin-bottom: 0.7rem;
+}
+.news-title.en { font-family: var(--font-body); font-weight: 600; line-height: 1.25; }
+.news-text { font-size: 16px; color: var(--s700); line-height: 1.9; max-width: 780px; }
+.award-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--s100); }
+.award-card { background: var(--s50); padding: 1.45rem 1.75rem; }
+.award-name { font-size: 20px; font-weight: 700; color: var(--g900); line-height: 1.3; margin-bottom: 0.15rem; }
+.award-name-en { font-size: 13px; color: var(--t600); font-weight: 600; margin-bottom: 0.9rem; }
+.award-label { font-size: 12px; font-weight: 700; color: var(--s500); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
+.award-topic { font-size: 15px; color: var(--s700); line-height: 1.75; }
+.back-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.75rem; }
+.action {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 8px 18px; border-radius: 22px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--g100); transition: all 0.2s;
+}
+.action.primary { background: var(--g800); color: #fff; border-color: var(--g800); }
+.action.secondary { background: var(--white); color: var(--g800); }
+.action:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(23,46,5,0.10); }
+
+footer { background: var(--g900); padding: 3rem 2rem; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; }
+.f-logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--g100); letter-spacing: 0.06em; }
+.f-logo span { color: var(--t200); font-weight: 400; }
+.f-sub { font-size: 13px; color: var(--g400); margin-top: 6px; line-height: 1.8; }
+.f-copy { font-size: 12px; color: var(--g600); margin-top: 8px; }
+.f-right { text-align: right; }
+.f-right a { font-size: 14px; color: var(--t200); text-decoration: none; }
+.f-right p { font-size: 13px; color: var(--g400); margin-top: 4px; }
+
+@media (max-width: 920px) {
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 13px; }
+}
+
+@media (max-width: 780px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 58px; left: 0; right: 0;
+    background: rgba(248,247,243,0.98);
+    border-bottom: 1px solid var(--s100);
+    padding: 1.25rem 2rem 1.75rem; gap: 1rem; z-index: 199;
+  }
+  .nav-menu-btn { display: block; }
+  .page-header { padding: 3.2rem 1.5rem 2.6rem; }
+  main { padding: 2.4rem 1.5rem 4rem; }
+  .news-entry-head { grid-template-columns: 1fr; gap: 1rem; padding: 1.35rem; }
+  .award-grid { grid-template-columns: 1fr; }
+  .award-card { padding: 1.25rem 1.35rem; }
+  .footer-inner { flex-direction: column; }
+  .f-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-en">TraitMap Lab</span>
+    <span class="nav-brand-zh zh">作物基因體與精準育種實驗室</span>
+    <span class="nav-brand-zh en" style="display:none !important; font-size:11px; color:var(--s500);">Crop Genomics &amp; Precision Breeding</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="zh">首頁</a><a href="index.html" class="en">Home</a></li>
+      <li><a href="index.html#signature" class="zh">特色</a><a href="index.html#signature" class="en">Focus</a></li>
+      <li><a href="index.html#research" class="zh">研究</a><a href="index.html#research" class="en">Research</a></li>
+      <li><a href="news.html" class="active zh">最新消息</a><a href="news.html" class="active en">News</a></li>
+      <li><a href="index.html#join" class="zh">加入我們</a><a href="index.html#join" class="en">Join</a></li>
+      <li><a href="members.html" class="zh">團隊</a><a href="members.html" class="en">Members</a></li>
+      <li><a href="publications.html" class="zh">著作</a><a href="publications.html" class="en">Publications</a></li>
+    </ul>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
+    <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-label">TraitMap Lab News</p>
+    <h1 class="ph-title zh">最新消息</h1>
+    <h1 class="ph-title en">News</h1>
+    <p class="ph-sub zh">實驗室公告、學生成果與活動消息。</p>
+    <p class="ph-sub en">Announcements, student achievements, and updates from TraitMap Lab.</p>
+  </div>
+</header>
+
+<main>
+  <section class="news-list" aria-label="TraitMap Lab news list">
+    <article class="news-entry">
+      <div class="news-entry-head">
+        <div>
+          <div class="news-date zh">2026</div>
+          <div class="news-date en">2026</div>
+          <div class="news-type zh">115年度國科會大專學生研究計畫</div>
+          <div class="news-type en">NSTC Undergraduate Student Research Project</div>
+        </div>
+        <div>
+          <h2 class="news-title zh">恭賀大學部學生趙芝瑩、盧昱婷研究提案獲得肯定</h2>
+          <h2 class="news-title en">Congratulations to Chih-Ying Chao and Yu-Ting Lu (Ashli)</h2>
+          <p class="news-text zh">恭喜兩位同學研究提案獲得國科會大專學生研究計畫肯定，展現優秀研究潛力。兩項主題分別延伸實驗室在作物抗病、逆境反應與分子育種上的核心方向。</p>
+          <p class="news-text en">Two undergraduate researchers received recognition from the NSTC Undergraduate Student Research Project program. Their projects extend the lab's core interests in crop disease resistance, stress responses, and molecular breeding.</p>
+        </div>
+      </div>
+      <div class="award-grid">
+        <div class="award-card">
+          <h3 class="award-name zh">趙芝瑩</h3>
+          <h3 class="award-name en">Chih-Ying Chao</h3>
+          <p class="award-name-en zh">Chih-Ying Chao</p>
+          <p class="award-name-en en">Undergraduate Researcher</p>
+          <p class="award-label zh">研究題目</p>
+          <p class="award-label en">Project</p>
+          <p class="award-topic zh">絲瓜抗萎凋病防禦機制的跨層級驗證</p>
+          <p class="award-topic en">Cross-Level Validation of Defense Mechanisms Against Fusarium Wilt in Luffa</p>
+        </div>
+        <div class="award-card">
+          <h3 class="award-name zh">盧昱婷</h3>
+          <h3 class="award-name en">Yu-Ting Lu (Ashli)</h3>
+          <p class="award-name-en zh">Yu-Ting Lu (Ashli)</p>
+          <p class="award-name-en en">Undergraduate Researcher</p>
+          <p class="award-label zh">研究題目</p>
+          <p class="award-label en">Project</p>
+          <p class="award-topic zh">高濕度條件誘導番茄花脫落相關花粉發育調控基因之分子特性研究</p>
+          <p class="award-topic en">Molecular Characterization of Pollen-Development Regulatory Genes Associated with Flower Abscission under High-Humidity Conditions in Tomato</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="back-links">
+    <a href="index.html#news" class="action primary zh">回首頁摘要</a>
+    <a href="index.html#news" class="action primary en">Back to Homepage Summary</a>
+    <a href="members.html" class="action secondary zh">查看團隊成員</a>
+    <a href="members.html" class="action secondary en">View Members</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-logo">TraitMap<span> Lab</span></div>
+      <div class="f-sub zh" style="margin-top:6px;">作物基因體與精準育種實驗室<br>國立中興大學 農藝學系<br>台中市 402 南區興大路 145 號</div>
+      <div class="f-sub en" style="margin-top:6px;">Crop Genomics &amp; Precision Breeding Laboratory<br>Department of Agronomy, NCHU<br>145 Xingda Rd., South Dist., Taichung 402, Taiwan</div>
+      <div class="f-copy">© 2026 TraitMap Lab, NCHU</div>
+    </div>
+    <div class="f-right">
+      <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
+      <p class="zh">+886-4-2284-0777 #703</p>
+      <p class="en">+886-4-2284-0777 ext. 703</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleLang() {
+  const html = document.documentElement;
+  const btn = document.getElementById('langBtn');
+  if (html.getAttribute('data-lang') === 'zh') {
+    html.setAttribute('data-lang', 'en');
+    html.setAttribute('lang', 'en');
+    btn.textContent = '中文';
+  } else {
+    html.setAttribute('data-lang', 'zh');
+    html.setAttribute('lang', 'zh-TW');
+    btn.textContent = 'English';
+  }
+}
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>

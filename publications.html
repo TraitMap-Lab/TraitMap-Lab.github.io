@@ -35,9 +35,9 @@ nav {
 .nav-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
 .nav-brand-en { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.05em; color: var(--g800); }
 .nav-brand-zh { font-size: 13px; color: var(--s500); letter-spacing: 0.06em; font-weight: 400; }
-.nav-right { display: flex; align-items: center; gap: 1.5rem; }
-.nav-links { display: flex; gap: 1.25rem; list-style: none; }
-.nav-links a { font-size: 14px; color: var(--s700); text-decoration: none; transition: color 0.2s; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 1rem; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--s700); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--g600); font-weight: 500; }
 .lang-btn {
   font-family: var(--font-body); font-size: 13px; font-weight: 500;
@@ -209,8 +209,11 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   <div class="nav-right">
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="zh">首頁</a><a href="index.html" class="en">Home</a></li>
+      <li><a href="index.html#signature" class="zh">特色</a><a href="index.html#signature" class="en">Focus</a></li>
       <li><a href="index.html#research" class="zh">研究</a><a href="index.html#research" class="en">Research</a></li>
-      <li><a href="members.html" class="zh">成員</a><a href="members.html" class="en">Members</a></li>
+      <li><a href="news.html" class="zh">最新消息</a><a href="news.html" class="en">News</a></li>
+      <li><a href="index.html#join" class="zh">加入我們</a><a href="index.html#join" class="en">Join</a></li>
+      <li><a href="members.html" class="zh">團隊</a><a href="members.html" class="en">Members</a></li>
       <li><a href="publications.html" class="active zh">著作</a><a href="publications.html" class="active en">Publications</a></li>
     </ul>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
