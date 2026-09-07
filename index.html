@@ -158,6 +158,32 @@ section { max-width: var(--max); margin: 0 auto; padding: 4rem 2rem; }
   line-height: 1.2; margin-bottom: 2.25rem;
 }
 
+/* ── NEWS ── */
+.news-list { display: flex; flex-direction: column; gap: 16px; }
+.news-item {
+  background: #fff; border: 1px solid var(--s100); border-radius: var(--radius);
+  padding: 1.65rem 1.75rem; box-shadow: 0 2px 16px rgba(23,46,5,0.05);
+}
+.news-head { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1rem; }
+.news-date {
+  flex-shrink: 0; min-width: 76px; text-align: center;
+  font-size: 13px; font-weight: 600; color: var(--g800);
+  background: var(--g50); border: 1px solid var(--g100);
+  border-radius: 8px; padding: 8px 10px; line-height: 1.35;
+}
+.news-title { font-size: 19px; font-weight: 600; color: var(--g900); line-height: 1.45; }
+.news-text { font-size: 15px; color: var(--s700); line-height: 1.8; margin-top: 0.45rem; }
+.news-projects {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px; margin-top: 1.25rem;
+}
+.news-project {
+  border-left: 3px solid var(--t400); background: var(--s50);
+  padding: 0.9rem 1rem; border-radius: 6px;
+}
+.news-student { font-size: 15px; font-weight: 600; color: var(--g800); margin-bottom: 0.25rem; }
+.news-topic { font-size: 14px; color: var(--s700); line-height: 1.65; }
+
 /* ── BIO ── */
 .bio-text { font-size: 16px; color: #3a3a36; line-height: 1.9; max-width: 760px; }
 .bio-text + .bio-text { margin-top: 1.1rem; }
@@ -236,6 +262,8 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem 2.5rem; }
   .hero-photo { order: -1; max-width: 220px; margin: 0 auto; }
   .photo-frame { aspect-ratio: 1/1; border-radius: 6px 36px 6px 36px; }
+  .news-head { flex-direction: column; gap: 0.8rem; }
+  .news-date { text-align: left; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
@@ -264,6 +292,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   <div class="nav-right">
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" class="zh">簡介</a><a href="#about" class="en">About</a></li>
+      <li><a href="#news" class="zh">最新消息</a><a href="#news" class="en">News</a></li>
       <li><a href="#research" class="zh">研究</a><a href="#research" class="en">Research</a></li>
       <li><a href="#experience" class="zh">學經歷</a><a href="#experience" class="en">CV</a></li>
       <li><a href="members.html" class="zh">團隊成員</a><a href="members.html" class="en">Members</a></li>
@@ -316,6 +345,43 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     </div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<!-- NEWS -->
+<section id="news">
+  <p class="s-label">News</p>
+  <h2 class="s-title zh">最新消息</h2>
+  <h2 class="s-title en">Latest News</h2>
+  <div class="news-list">
+    <article class="news-item">
+      <div class="news-head">
+        <div class="news-date zh">115年度<br>國科會</div>
+        <div class="news-date en">2026<br>NSTC</div>
+        <div>
+          <h3 class="news-title zh">恭賀大學部學生趙芝瑩、盧昱婷榮獲國科會大專學生研究計畫</h3>
+          <h3 class="news-title en">Congratulations to Undergraduate Researchers Chih-Ying Chao and Yu-Ting Lu (Ashli)</h3>
+          <p class="news-text zh">恭喜兩位同學研究提案獲得肯定，展現優秀研究潛力。</p>
+          <p class="news-text en">Congratulations to Chih-Ying Chao and Yu-Ting Lu (Ashli) on receiving support from the NSTC Undergraduate Student Research Project program, recognizing the promise and quality of their research proposals.</p>
+        </div>
+      </div>
+      <div class="news-projects">
+        <div class="news-project">
+          <div class="news-student zh">趙芝瑩</div>
+          <div class="news-student en">Chih-Ying Chao</div>
+          <p class="news-topic zh">題目：絲瓜抗萎凋病防禦機制的跨層級驗證</p>
+          <p class="news-topic en">Project: Cross-Level Validation of Defense Mechanisms Against Fusarium Wilt in Luffa</p>
+        </div>
+        <div class="news-project">
+          <div class="news-student zh">盧昱婷</div>
+          <div class="news-student en">Yu-Ting Lu (Ashli)</div>
+          <p class="news-topic zh">題目：高濕度條件誘導番茄花脫落相關花粉發育調控基因之分子特性研究</p>
+          <p class="news-topic en">Project: Molecular Characterization of Pollen-Development Regulatory Genes Associated with Flower Abscission under High-Humidity Conditions in Tomato</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
 <div class="divider"></div>
 
