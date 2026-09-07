@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 132" role="img" aria-labelledby="title desc">
+  <title id="title">TraitMap Lab trait-to-marker signature</title>
+  <desc id="desc">A minimal crop-to-genomic-marker pathway for TraitMap Lab.</desc>
+  <rect width="220" height="132" rx="8" fill="#F5F3EC"/>
+  <path d="M28 88c26-42 64-58 114-42 19 6 35 6 49-4" fill="none" stroke="#C0DD97" stroke-width="2"/>
+  <path d="M52 87c-11-19-6-40 13-57 12 21 8 43-13 57Z" fill="#EAF3DE" stroke="#5A8F1A" stroke-width="2"/>
+  <path d="M54 85c9-20 13-36 10-50" fill="none" stroke="#5A8F1A" stroke-width="1.4" stroke-linecap="round"/>
+  <g fill="none" stroke="#1D9E75" stroke-linecap="round" stroke-width="2">
+    <path d="M91 38h55"/>
+    <path d="M91 52h55"/>
+    <path d="M91 66h55"/>
+    <path d="M91 80h55"/>
+  </g>
+  <g fill="#274F0A">
+    <circle cx="103" cy="38" r="3"/>
+    <circle cx="127" cy="52" r="3"/>
+    <circle cx="113" cy="66" r="3"/>
+    <circle cx="138" cy="80" r="3"/>
+  </g>
+  <path d="M160 75c8-8 17-8 25 0 8 8 8 18 0 26-8 8-17 8-25 0-8-8-8-18 0-26Z" fill="#E0F5EE" stroke="#0F6E56" stroke-width="2"/>
+  <path d="M167 88h18M176 79v18" stroke="#0F6E56" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#7A7870" font-family="Outfit, Arial, sans-serif" font-size="9" font-weight="600">
+    <text x="27" y="111">Trait</text>
+    <text x="95" y="111">Signal</text>
+    <text x="157" y="111">Marker</text>
+  </g>
+</svg>

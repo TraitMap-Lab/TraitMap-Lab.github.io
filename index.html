@@ -6,7 +6,7 @@
 <title>TraitMap Lab | 作物基因體與精準育種實驗室</title>
 <meta name="description" content="TraitMap Lab connects crop traits, genomics, molecular markers, and precision breeding at National Chung Hsing University.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Noto+Sans+TC:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,15 +19,16 @@
   --paper: #f8f7f3;
   --white: #fff;
   --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Outfit', sans-serif;
-  --max: 1120px;
+  --font-zh: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  --font-body: 'Outfit', 'Noto Sans TC', sans-serif;
+  --max: 1160px;
   --radius: 8px;
 }
 
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   background: var(--paper);
   color: var(--ink);
   line-height: 1.7;
@@ -38,7 +39,7 @@ body {
 
 nav {
   position: sticky; top: 0; z-index: 200;
-  height: 64px; padding: 0 2rem;
+  height: 58px; padding: 0 2rem;
   background: rgba(248,247,243,0.94);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--s100);
@@ -47,20 +48,20 @@ nav {
 .nav-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
 .nav-brand-en {
   font-family: var(--font-display);
-  font-size: 22px; font-weight: 600;
+  font-size: 20px; font-weight: 600;
   letter-spacing: 0.05em; color: var(--g800);
 }
-.nav-brand-zh { font-size: 12px; color: var(--s500); letter-spacing: 0.06em; }
+.nav-brand-zh { font-size: 11px; color: var(--s500); letter-spacing: 0.06em; }
 .nav-right { display: flex; align-items: center; gap: 1rem; }
 .nav-links { display: flex; gap: 1rem; list-style: none; }
 .nav-links a {
-  font-size: 14px; font-weight: 400;
+  font-size: 13px; font-weight: 500;
   color: var(--s700); text-decoration: none;
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--g600); }
 .lang-btn {
-  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  font-family: var(--font-body); font-size: 12px; font-weight: 500;
   padding: 5px 14px; border-radius: 20px;
   border: 1px solid var(--s100); background: var(--white);
   color: var(--s700); cursor: pointer;
@@ -71,29 +72,35 @@ nav {
 
 .hero {
   max-width: var(--max); margin: 0 auto;
-  padding: 5rem 2rem 3.5rem;
-  display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 4rem; align-items: center;
+  padding: 4.25rem 2rem 3rem;
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3.25rem; align-items: center;
 }
 .hero-kicker {
-  font-size: 13px; font-weight: 600;
+  font-size: 12px; font-weight: 700;
   color: var(--t600); letter-spacing: 0.12em; text-transform: uppercase;
   margin-bottom: 1rem;
 }
 .hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(42px, 5.6vw, 72px);
-  font-weight: 600; line-height: 1.02; color: var(--g900);
-  max-width: 760px; margin-bottom: 1.25rem;
+  font-family: var(--font-zh);
+  font-size: clamp(34px, 4.2vw, 56px);
+  font-weight: 700; line-height: 1.18; color: var(--g900);
+  max-width: 720px; margin-bottom: 1.15rem;
+  letter-spacing: 0;
+}
+.hero-title.en {
+  font-family: var(--font-body);
+  font-size: clamp(36px, 4.4vw, 60px);
+  font-weight: 600; line-height: 1.08;
 }
 .hero-desc {
-  font-size: 17px; color: var(--s700); line-height: 1.9;
-  max-width: 660px; margin-bottom: 1.75rem;
+  font-size: 16px; color: var(--s700); line-height: 1.85;
+  max-width: 690px; margin-bottom: 1.5rem;
 }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.75rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.55rem; }
 .action {
   display: inline-flex; align-items: center; justify-content: center;
-  min-height: 38px; padding: 7px 16px; border-radius: 20px;
-  font-size: 14px; font-weight: 500; text-decoration: none;
+  min-height: 42px; padding: 8px 18px; border-radius: 22px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
   border: 1px solid var(--g100); transition: all 0.2s;
 }
 .action.primary { background: var(--g800); color: #fff; border-color: var(--g800); }
@@ -101,42 +108,52 @@ nav {
 .action:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(23,46,5,0.10); }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag {
-  font-size: 13px; padding: 5px 12px; border-radius: 20px;
-  background: var(--g50); color: var(--g800);
+  font-size: 12px; padding: 5px 11px; border-radius: 20px;
+  background: rgba(234,243,222,0.70); color: var(--g800);
   border: 1px solid var(--g100);
 }
 
+.hero-side { display: grid; gap: 14px; align-self: start; }
+.signature-card {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); padding: 0.85rem;
+  box-shadow: 0 8px 28px rgba(23,46,5,0.06);
+}
+.signature-card img { width: 100%; height: auto; display: block; border-radius: 6px; }
 .hero-panel {
   border: 1px solid var(--s100); border-radius: var(--radius);
   background: var(--white); overflow: hidden;
-  box-shadow: 0 10px 35px rgba(23,46,5,0.08);
+  box-shadow: 0 8px 28px rgba(23,46,5,0.07);
 }
 .hero-photo {
-  aspect-ratio: 4/5; background: linear-gradient(155deg, var(--g50), var(--t50));
+  aspect-ratio: 4/3; background: linear-gradient(155deg, var(--g50), var(--t50));
   overflow: hidden;
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
-.hero-panel-body { padding: 1.15rem 1.25rem 1.25rem; }
+.hero-panel-body { padding: 1rem 1.1rem 1.15rem; }
 .pi-role { font-size: 12px; font-weight: 600; color: var(--t600); letter-spacing: 0.11em; text-transform: uppercase; }
-.pi-name { font-family: var(--font-display); font-size: 29px; line-height: 1.1; color: var(--g900); margin-top: 0.3rem; }
-.pi-sub { font-size: 14px; color: var(--s500); margin-top: 0.25rem; }
+.pi-name { font-family: var(--font-zh); font-size: 24px; font-weight: 700; line-height: 1.25; color: var(--g900); margin-top: 0.3rem; }
+.pi-name.en { font-family: var(--font-body); font-weight: 600; }
+.pi-sub { font-size: 13px; color: var(--s500); margin-top: 0.25rem; }
 .contact-lines { display: flex; flex-direction: column; gap: 4px; margin-top: 0.9rem; font-size: 13px; color: var(--s700); }
 .contact-lines a { color: var(--t600); text-decoration: none; }
 .contact-lines a:hover { text-decoration: underline; }
 
 .divider { max-width: var(--max); margin: 0 auto; padding: 0 2rem; border-top: 1px solid var(--s100); }
-section { max-width: var(--max); margin: 0 auto; padding: 4rem 2rem; }
+section { max-width: var(--max); margin: 0 auto; padding: 3.6rem 2rem; }
 .s-label {
   font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--t400); margin-bottom: 0.5rem;
 }
 .s-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 600; color: var(--g900);
-  line-height: 1.2; margin-bottom: 0.9rem;
+  font-family: var(--font-zh);
+  font-size: clamp(25px, 2.5vw, 34px);
+  font-weight: 700; color: var(--g900);
+  line-height: 1.35; margin-bottom: 0.9rem;
+  letter-spacing: 0;
 }
-.s-intro { max-width: 760px; font-size: 16px; color: var(--s700); line-height: 1.9; margin-bottom: 2rem; }
+.s-title.en { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 600; line-height: 1.18; }
+.s-intro { max-width: 760px; font-size: 15px; color: var(--s700); line-height: 1.9; margin-bottom: 1.8rem; }
 
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .feature {
@@ -264,7 +281,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
 @media (max-width: 940px) {
   .nav-links { gap: 0.7rem; }
   .nav-links a { font-size: 13px; }
-  .hero { grid-template-columns: 1fr 280px; gap: 2.5rem; }
+  .hero { grid-template-columns: 1fr 280px; gap: 2.25rem; }
   .feature-grid, .crop-grid { grid-template-columns: repeat(2, 1fr); }
   .work-map { grid-template-columns: repeat(2, 1fr); }
   .work-step:nth-child(2) { border-right: none; }
@@ -277,15 +294,16 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
-    position: absolute; top: 64px; left: 0; right: 0;
+    position: absolute; top: 58px; left: 0; right: 0;
     background: rgba(248,247,243,0.98);
     border-bottom: 1px solid var(--s100);
     padding: 1.25rem 2rem 1.75rem; gap: 1rem; z-index: 199;
   }
   .nav-menu-btn { display: block; }
-  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2.5rem; }
-  .hero-panel { max-width: 260px; margin: 0 auto; order: -1; }
-  .hero-title { font-size: clamp(38px, 12vw, 52px); }
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.8rem 1.5rem 2.35rem; }
+  .hero-side { max-width: 300px; margin: 0 auto; order: -1; }
+  .hero-title { font-size: clamp(32px, 9vw, 42px); line-height: 1.22; }
+  .hero-title.en { font-size: clamp(34px, 9vw, 46px); line-height: 1.12; }
   section { padding: 3rem 1.5rem; }
   .feature-grid, .crop-grid, .work-map, .award-list, .join-band { grid-template-columns: 1fr; }
   .work-step, .work-step:nth-child(2) { border-right: none; border-bottom: 1px solid var(--s100); }
@@ -344,21 +362,26 @@ footer { background: var(--g900); padding: 3rem 2rem; }
         <span class="tag">Molecular Breeding</span>
       </div>
     </div>
-    <aside class="hero-panel" aria-label="Principal Investigator">
-      <div class="hero-photo">
-        <img src="images/photo.jpg" alt="Prof. Shu-Yun Chen">
+    <aside class="hero-side" aria-label="TraitMap Lab visual identity and principal investigator">
+      <div class="signature-card">
+        <img src="images/traitmap-signature.svg" alt="Trait to signal to marker visual identity">
       </div>
-      <div class="hero-panel-body">
-        <p class="pi-role zh">實驗室主持人</p>
-        <p class="pi-role en">Principal Investigator</p>
-        <h2 class="pi-name zh">鄭舒允</h2>
-        <h2 class="pi-name en">Shu-Yun Chen</h2>
-        <p class="pi-sub zh">副教授 · 國立中興大學農藝學系</p>
-        <p class="pi-sub en">Associate Professor · Dept. of Agronomy</p>
-        <div class="contact-lines">
-          <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
-          <span class="zh">作物科學大樓 A703</span>
-          <span class="en">Crop Science Building A703</span>
+      <div class="hero-panel">
+        <div class="hero-photo">
+          <img src="images/photo.jpg" alt="Prof. Shu-Yun Chen">
+        </div>
+        <div class="hero-panel-body">
+          <p class="pi-role zh">實驗室主持人</p>
+          <p class="pi-role en">Principal Investigator</p>
+          <h2 class="pi-name zh">鄭舒允</h2>
+          <h2 class="pi-name en">Shu-Yun Chen</h2>
+          <p class="pi-sub zh">副教授 · 國立中興大學農藝學系</p>
+          <p class="pi-sub en">Associate Professor · Dept. of Agronomy</p>
+          <div class="contact-lines">
+            <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
+            <span class="zh">作物科學大樓 A703</span>
+            <span class="en">Crop Science Building A703</span>
+          </div>
         </div>
       </div>
     </aside>
