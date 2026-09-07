@@ -178,6 +178,32 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.6rem 2rem; }
 .work-step-title { font-size: 17px; font-weight: 600; color: var(--g800); margin-bottom: 0.45rem; }
 .work-step-text { font-size: 14px; color: var(--s700); line-height: 1.7; }
 
+.pub-preview {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); overflow: hidden;
+}
+.pub-row {
+  display: grid; grid-template-columns: 78px 1fr auto;
+  gap: 1.15rem; align-items: start;
+  padding: 1.2rem 1.35rem; border-bottom: 1px solid var(--s100);
+}
+.pub-row:last-child { border-bottom: none; }
+.pub-year {
+  font-size: 13px; font-weight: 700; color: var(--g800);
+  background: var(--g50); border: 1px solid var(--g100);
+  border-radius: 20px; padding: 4px 10px; text-align: center;
+}
+.pub-title { font-size: 15px; font-weight: 600; color: var(--g800); line-height: 1.55; margin-bottom: 0.35rem; }
+.pub-title a { color: inherit; text-decoration: none; }
+.pub-title a:hover { color: var(--t600); text-decoration: underline; }
+.pub-meta { font-size: 13px; color: var(--s500); line-height: 1.6; }
+.pub-link {
+  font-size: 12px; font-weight: 700; color: var(--t600); text-decoration: none;
+  border: 1px solid var(--t200); border-radius: 20px; padding: 4px 10px;
+}
+.pub-link:hover { background: var(--t50); }
+.pub-more { margin-top: 1.15rem; }
+
 .crop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .crop {
   background: var(--white); border: 1px solid var(--s100);
@@ -306,6 +332,9 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   .hero-title.en { font-size: clamp(34px, 9vw, 46px); line-height: 1.12; }
   section { padding: 3rem 1.5rem; }
   .feature-grid, .crop-grid, .work-map, .award-list, .join-band { grid-template-columns: 1fr; }
+  .pub-row { grid-template-columns: 1fr; gap: 0.65rem; }
+  .pub-year { width: fit-content; }
+  .pub-link { width: fit-content; }
   .work-step, .work-step:nth-child(2) { border-right: none; border-bottom: 1px solid var(--s100); }
   .work-step:last-child { border-bottom: none; }
   .news-top { align-items: flex-start; flex-direction: column; }
@@ -331,7 +360,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       <li><a href="#news" class="zh">最新消息</a><a href="#news" class="en">News</a></li>
       <li><a href="#join" class="zh">加入我們</a><a href="#join" class="en">Join</a></li>
       <li><a href="members.html" class="zh">團隊</a><a href="members.html" class="en">Members</a></li>
-      <li><a href="publications.html" class="zh">著作</a><a href="publications.html" class="en">Publications</a></li>
+      <li><a href="#publications" class="zh">著作</a><a href="#publications" class="en">Publications</a></li>
     </ul>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
     <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -457,6 +486,60 @@ footer { background: var(--g900); padding: 3rem 2rem; }
         <p class="work-step-text zh">開發分子標記，協助抗病、耐逆境與重要性狀的育種選拔。</p>
         <p class="work-step-text en">Develop markers to support selection for resistance, stress tolerance, and key traits.</p>
       </article>
+    </div>
+  </section>
+
+  <section id="publications">
+    <p class="s-label">Selected Publications</p>
+    <h2 class="s-title zh">代表論文與研究成果</h2>
+    <h2 class="s-title en">Selected publications and research outputs</h2>
+    <p class="s-intro zh">保留論文列表能讓學生、合作夥伴與外部訪客快速理解實驗室的研究脈絡。這裡列出近期與研究主軸高度相關的成果，完整列表請見著作頁。</p>
+    <p class="s-intro en">Selected papers help students, collaborators, and visitors quickly understand the lab's research trajectory. Recent and highly relevant outputs are shown here, with the full list available on the publications page.</p>
+    <div class="pub-preview">
+      <article class="pub-row">
+        <div class="pub-year">2026</div>
+        <div>
+          <h3 class="pub-title"><a href="publications.html#journal">Whole-genome resequencing-based GWAS reveals loci associated with yellow leaf disease resistance in <em>Phalaenopsis</em>.</a></h3>
+          <p class="pub-meta">Scientia Horticulturae · Ling-Yu Chen et al.; Shu-Yun Chen</p>
+        </div>
+        <a class="pub-link" href="publications.html#journal">LIST</a>
+      </article>
+      <article class="pub-row">
+        <div class="pub-year">2025</div>
+        <div>
+          <h3 class="pub-title"><a href="publications.html#journal">Identification of key drought-tolerant genes in soybean using an integrative data-driven feature engineering pipeline.</a></h3>
+          <p class="pub-meta">Journal of Big Data · Pei-Hsiu Kao et al.; Shu-Yun Chen</p>
+        </div>
+        <a class="pub-link" href="publications.html#journal">LIST</a>
+      </article>
+      <article class="pub-row">
+        <div class="pub-year">2024</div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" rel="noopener">Analyzing genetic diversity in luffa and developing a Fusarium wilt-susceptible linked SNP marker through a single plant genome-wide association (sp-GWAS) study.</a></h3>
+          <p class="pub-meta">BMC Plant Biology · Y. D. Li et al.; Chen, S. Y.</p>
+        </div>
+        <a class="pub-link" href="https://doi.org/10.1186/s12870-024-05022-7" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub-row">
+        <div class="pub-year">2023</div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" rel="noopener"><em>PeCIN8</em> expression correlates with flower size and resistance to yellow leaf disease in <em>Phalaenopsis</em> orchids.</a></h3>
+          <p class="pub-meta">BMC Plant Biology · Wu, Y. J. et al.; Chen, S. Y.</p>
+        </div>
+        <a class="pub-link" href="https://doi.org/10.1186/s12870-023-04567-3" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub-row">
+        <div class="pub-year">2022</div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" rel="noopener">High-density genetic map and genome-wide association studies of aesthetic traits in <em>Phalaenopsis</em> orchids.</a></h3>
+          <p class="pub-meta">Scientific Reports · Chia-Chi Hsu et al.; Shu-Yun Chen</p>
+        </div>
+        <a class="pub-link" href="https://doi.org/10.1038/s41598-022-07318-w" target="_blank" rel="noopener">DOI</a>
+      </article>
+    </div>
+    <div class="pub-more">
+      <a href="publications.html" class="action secondary zh">查看完整論文、書章與海報</a>
+      <a href="publications.html" class="action secondary en">View Full Publications</a>
     </div>
   </section>
 
