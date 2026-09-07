@@ -53,7 +53,7 @@ nav {
 }
 .nav-brand-zh { font-size: 11px; color: var(--s500); letter-spacing: 0.06em; }
 .nav-right { display: flex; align-items: center; gap: 1rem; }
-.nav-links { display: flex; gap: 1rem; list-style: none; }
+.nav-links { display: flex; gap: 0.8rem; list-style: none; }
 .nav-links a {
   font-size: 13px; font-weight: 500;
   color: var(--s700); text-decoration: none;
@@ -358,8 +358,9 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       <li><a href="#signature" class="zh">特色</a><a href="#signature" class="en">Focus</a></li>
       <li><a href="#research" class="zh">研究</a><a href="#research" class="en">Research</a></li>
       <li><a href="news.html" class="zh">最新消息</a><a href="news.html" class="en">News</a></li>
-      <li><a href="members.html" class="zh">團隊</a><a href="members.html" class="en">Members</a></li>
-      <li><a href="#publications" class="zh">著作</a><a href="#publications" class="en">Publications</a></li>
+      <li><a href="members.html" class="zh">團隊成員</a><a href="members.html" class="en">Members</a></li>
+      <li><a href="photos.html" class="zh">活動照片</a><a href="photos.html" class="en">Photos</a></li>
+      <li><a href="#publications" class="zh">發表著作</a><a href="#publications" class="en">Publications</a></li>
     </ul>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
     <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -414,6 +415,28 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       </div>
     </aside>
   </div>
+
+  <div class="divider"></div>
+
+  <section id="news">
+    <p class="s-label">News</p>
+    <h2 class="s-title zh">最新消息</h2>
+    <h2 class="s-title en">Latest News</h2>
+    <article class="news-card">
+      <div class="news-top">
+        <span class="news-badge zh">115年度國科會大專學生研究計畫</span>
+        <span class="news-badge en">2026 NSTC Undergraduate Student Research Project</span>
+      </div>
+      <h3 class="news-title zh">恭賀大學部學生趙芝瑩、盧昱婷研究提案獲得肯定</h3>
+      <h3 class="news-title en">Congratulations to Chih-Ying Chao and Yu-Ting Lu (Ashli)</h3>
+      <p class="news-text zh">兩位同學的研究提案獲得國科會大專學生研究計畫肯定，主題延伸實驗室在抗病、逆境反應與分子育種上的核心方向。</p>
+      <p class="news-text en">Their proposals were recognized by the NSTC Undergraduate Student Research Project program and extend the lab's core work in disease resistance, stress responses, and molecular breeding.</p>
+      <div class="pub-more">
+        <a href="news.html" class="action secondary zh">查看全部消息</a>
+        <a href="news.html" class="action secondary en">View All News</a>
+      </div>
+    </article>
+  </section>
 
   <div class="divider"></div>
 
@@ -576,26 +599,6 @@ footer { background: var(--g900); padding: 3rem 2rem; }
 
   <div class="divider"></div>
 
-  <section id="news">
-    <p class="s-label">News</p>
-    <h2 class="s-title zh">最新消息</h2>
-    <h2 class="s-title en">Latest News</h2>
-    <article class="news-card">
-      <div class="news-top">
-        <span class="news-badge zh">115年度國科會大專學生研究計畫</span>
-        <span class="news-badge en">2026 NSTC Undergraduate Student Research Project</span>
-      </div>
-      <h3 class="news-title zh">恭賀大學部學生趙芝瑩、盧昱婷研究提案獲得肯定</h3>
-      <h3 class="news-title en">Congratulations to Chih-Ying Chao and Yu-Ting Lu (Ashli)</h3>
-      <p class="news-text zh">兩位同學的研究提案獲得國科會大專學生研究計畫肯定，主題延伸實驗室在抗病、逆境反應與分子育種上的核心方向。</p>
-      <p class="news-text en">Their proposals were recognized by the NSTC Undergraduate Student Research Project program and extend the lab's core work in disease resistance, stress responses, and molecular breeding.</p>
-      <div class="pub-more">
-        <a href="news.html" class="action secondary zh">查看全部消息</a>
-        <a href="news.html" class="action secondary en">View All News</a>
-      </div>
-    </article>
-  </section>
-
   <section id="join">
     <div class="join-band">
       <div>
@@ -726,18 +729,19 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       <a href="publications.html" class="nav-card">
         <span class="nc-icon">Papers</span>
         <div>
-          <div class="nc-title zh">論文與著作</div>
+          <div class="nc-title zh">發表著作</div>
           <div class="nc-title en">Publications</div>
           <div class="nc-sub zh">期刊論文・著作</div>
           <div class="nc-sub en">Journal articles and books</div>
         </div>
       </a>
-      <a href="https://sites.google.com/email.nchu.edu.tw/shuyun-chen/%E6%B4%BB%E5%8B%95%E7%85%A7%E7%89%87-photos" target="_blank" rel="noopener" class="nav-card">
+      <a href="photos.html" class="nav-card">
         <span class="nc-icon">Photos</span>
         <div>
           <div class="nc-title zh">活動照片</div>
           <div class="nc-title en">Photos</div>
-          <div class="nc-sub">Google Sites</div>
+          <div class="nc-sub zh">交流活動・實驗室生活</div>
+          <div class="nc-sub en">Visits, events, and lab life</div>
         </div>
       </a>
       <a href="https://github.com/TraitMap-Lab" target="_blank" rel="noopener" class="nav-card">
