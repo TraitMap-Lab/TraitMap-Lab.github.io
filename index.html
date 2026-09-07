@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TraitMap Lab — 作物基因體與精準育種實驗室</title>
-<meta name="description" content="TraitMap Lab — Crop Genomics and Precision Breeding Laboratory. Associate Professor Shu-Yun Chen, Department of Agronomy, NCHU.">
+<title>TraitMap Lab | 作物基因體與精準育種實驗室</title>
+<meta name="description" content="TraitMap Lab connects crop traits, genomics, molecular markers, and precision breeding at National Chung Hsing University.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -15,32 +15,33 @@
   --g400: #5A8F1A; --g600: #3B6D11; --g800: #274F0A; --g900: #162E05;
   --t50: #E0F5EE; --t200: #7DDBB9; --t400: #1D9E75; --t600: #0F6E56;
   --s50: #F5F3EC; --s100: #E2DFD5; --s300: #B8B4A8; --s500: #7A7870; --s700: #494742;
+  --ink: #1e1d1a;
+  --paper: #f8f7f3;
+  --white: #fff;
   --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Outfit', sans-serif;
-  --max: 1100px;
-  --radius: 14px;
+  --max: 1120px;
+  --radius: 8px;
 }
 
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  background: #f8f7f3;
-  color: #1e1d1a;
+  background: var(--paper);
+  color: var(--ink);
   line-height: 1.7;
 }
 
-/* ── LANG TOGGLE ── */
 [data-lang="zh"] .en { display: none !important; }
 [data-lang="en"] .zh { display: none !important; }
 
-/* ── NAV ── */
 nav {
   position: sticky; top: 0; z-index: 200;
+  height: 64px; padding: 0 2rem;
   background: rgba(248,247,243,0.94);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--s100);
-  height: 60px; padding: 0 2rem;
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
@@ -49,199 +50,202 @@ nav {
   font-size: 22px; font-weight: 600;
   letter-spacing: 0.05em; color: var(--g800);
 }
-.nav-brand-zh {
-  font-size: 13px; color: var(--s500);
-  letter-spacing: 0.06em; font-weight: 400;
-}
-.nav-right { display: flex; align-items: center; gap: 1.5rem; }
-.nav-links { display: flex; gap: 1.25rem; list-style: none; }
+.nav-brand-zh { font-size: 12px; color: var(--s500); letter-spacing: 0.06em; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 1rem; list-style: none; }
 .nav-links a {
   font-size: 14px; font-weight: 400;
   color: var(--s700); text-decoration: none;
-  letter-spacing: 0.01em; transition: color 0.2s;
+  transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--g600); }
 .lang-btn {
   font-family: var(--font-body); font-size: 13px; font-weight: 500;
   padding: 5px 14px; border-radius: 20px;
-  border: 1px solid var(--s100); background: #fff;
+  border: 1px solid var(--s100); background: var(--white);
   color: var(--s700); cursor: pointer;
   transition: all 0.2s; white-space: nowrap;
 }
 .lang-btn:hover { border-color: var(--g200); color: var(--g600); background: var(--g50); }
 .nav-menu-btn { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--s700); }
 
-/* ── HERO ── */
 .hero {
   max-width: var(--max); margin: 0 auto;
-  padding: 5rem 2rem 4rem;
-  display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: center;
+  padding: 5rem 2rem 3.5rem;
+  display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 4rem; align-items: center;
 }
-.hero-eyebrow {
-  font-size: 15px; font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--t400); margin-bottom: 1rem;
+.hero-kicker {
+  font-size: 13px; font-weight: 600;
+  color: var(--t600); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 1rem;
 }
-.hero-name {
+.hero-title {
   font-family: var(--font-display);
-  font-size: clamp(46px, 5.5vw, 70px);
-  font-weight: 600; line-height: 1.0; color: var(--g900);
-  margin-bottom: 0.35rem;
-}
-.hero-name-sub {
-  font-family: var(--font-display);
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 400; color: var(--s300);
-  display: block; margin-bottom: 0.5rem;
-  letter-spacing: 0.04em;
-}
-.hero-title-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 14px; font-weight: 500; color: var(--g600);
-  background: var(--g50); border: 1px solid var(--g100);
-  border-radius: 6px; padding: 5px 14px; margin-bottom: 1.5rem;
+  font-size: clamp(42px, 5.6vw, 72px);
+  font-weight: 600; line-height: 1.02; color: var(--g900);
+  max-width: 760px; margin-bottom: 1.25rem;
 }
 .hero-desc {
-  font-size: 16px; color: var(--s700); line-height: 1.85;
-  max-width: 500px; margin-bottom: 2rem;
+  font-size: 17px; color: var(--s700); line-height: 1.9;
+  max-width: 660px; margin-bottom: 1.75rem;
 }
-.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.25rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.75rem; }
+.action {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 38px; padding: 7px 16px; border-radius: 20px;
+  font-size: 14px; font-weight: 500; text-decoration: none;
+  border: 1px solid var(--g100); transition: all 0.2s;
+}
+.action.primary { background: var(--g800); color: #fff; border-color: var(--g800); }
+.action.secondary { background: var(--white); color: var(--g800); }
+.action:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(23,46,5,0.10); }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag {
-  font-size: 13px; padding: 5px 13px; border-radius: 20px;
+  font-size: 13px; padding: 5px 12px; border-radius: 20px;
   background: var(--g50); color: var(--g800);
-  border: 1px solid var(--g100); letter-spacing: 0.01em;
-}
-.hero-contact { display: flex; flex-direction: column; gap: 8px; }
-.ci { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #3a3a36; }
-.cl { color: var(--s300); min-width: 54px; font-size: 13px; letter-spacing: 0.03em; padding-top: 1px; }
-a.cv { color: var(--t600); text-decoration: none; }
-a.cv:hover { text-decoration: underline; }
-
-/* photo */
-.hero-photo { position: relative; }
-.photo-frame {
-  width: 100%; aspect-ratio: 3/4;
-  background: linear-gradient(155deg, var(--g50) 0%, var(--t50) 60%, #e4f2e0 100%);
-  border-radius: 6px 52px 6px 52px;
   border: 1px solid var(--g100);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden; position: relative;
 }
-.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-.photo-initial {
-  font-family: var(--font-display); font-size: 90px;
-  font-weight: 600; color: var(--g100); user-select: none;
-}
-.photo-badge {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: rgba(248,247,243,0.95);
-  border-top: 1px solid var(--g100); padding: 14px 18px;
-  border-radius: 0 0 6px 52px;
-}
-.badge-en { font-size: 14px; font-weight: 500; color: var(--g800); }
-.badge-dept { font-size: 13px; color: var(--s500); margin-top: 2px; }
 
-/* ── DIVIDER ── */
+.hero-panel {
+  border: 1px solid var(--s100); border-radius: var(--radius);
+  background: var(--white); overflow: hidden;
+  box-shadow: 0 10px 35px rgba(23,46,5,0.08);
+}
+.hero-photo {
+  aspect-ratio: 4/5; background: linear-gradient(155deg, var(--g50), var(--t50));
+  overflow: hidden;
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
+.hero-panel-body { padding: 1.15rem 1.25rem 1.25rem; }
+.pi-role { font-size: 12px; font-weight: 600; color: var(--t600); letter-spacing: 0.11em; text-transform: uppercase; }
+.pi-name { font-family: var(--font-display); font-size: 29px; line-height: 1.1; color: var(--g900); margin-top: 0.3rem; }
+.pi-sub { font-size: 14px; color: var(--s500); margin-top: 0.25rem; }
+.contact-lines { display: flex; flex-direction: column; gap: 4px; margin-top: 0.9rem; font-size: 13px; color: var(--s700); }
+.contact-lines a { color: var(--t600); text-decoration: none; }
+.contact-lines a:hover { text-decoration: underline; }
+
 .divider { max-width: var(--max); margin: 0 auto; padding: 0 2rem; border-top: 1px solid var(--s100); }
-
-/* ── SECTION ── */
 section { max-width: var(--max); margin: 0 auto; padding: 4rem 2rem; }
 .s-label {
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--t400); margin-bottom: 0.5rem;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--t400); margin-bottom: 0.5rem;
 }
 .s-title {
   font-family: var(--font-display);
-  font-size: clamp(26px, 3vw, 36px);
+  font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 600; color: var(--g900);
-  line-height: 1.2; margin-bottom: 2.25rem;
+  line-height: 1.2; margin-bottom: 0.9rem;
 }
+.s-intro { max-width: 760px; font-size: 16px; color: var(--s700); line-height: 1.9; margin-bottom: 2rem; }
 
-/* ── NEWS ── */
-.news-list { display: flex; flex-direction: column; gap: 16px; }
-.news-item {
-  background: #fff; border: 1px solid var(--s100); border-radius: var(--radius);
-  padding: 1.65rem 1.75rem; box-shadow: 0 2px 16px rgba(23,46,5,0.05);
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.feature {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); padding: 1.35rem;
 }
-.news-head { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1rem; }
-.news-date {
-  flex-shrink: 0; min-width: 76px; text-align: center;
-  font-size: 13px; font-weight: 600; color: var(--g800);
+.feature-no {
+  font-family: var(--font-display); font-size: 24px; color: var(--g200);
+  line-height: 1; margin-bottom: 0.8rem;
+}
+.feature-title { font-size: 17px; font-weight: 600; color: var(--g800); line-height: 1.45; margin-bottom: 0.5rem; }
+.feature-text { font-size: 14px; color: var(--s700); line-height: 1.75; }
+
+.work-map {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--s100); border-radius: var(--radius);
+  overflow: hidden; background: var(--white);
+}
+.work-step { padding: 1.35rem; border-right: 1px solid var(--s100); min-height: 150px; }
+.work-step:last-child { border-right: none; }
+.work-step-label { font-size: 12px; font-weight: 600; color: var(--t600); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.work-step-title { font-size: 17px; font-weight: 600; color: var(--g800); margin-bottom: 0.45rem; }
+.work-step-text { font-size: 14px; color: var(--s700); line-height: 1.7; }
+
+.crop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.crop {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); padding: 1.25rem;
+}
+.crop-name { font-size: 18px; font-weight: 600; color: var(--g900); margin-bottom: 0.35rem; }
+.crop-meta { font-size: 13px; font-weight: 500; color: var(--t600); margin-bottom: 0.6rem; }
+.crop-text { font-size: 14px; color: var(--s700); line-height: 1.7; }
+
+.news-card {
+  background: linear-gradient(180deg, #fff 0%, var(--s50) 100%);
+  border: 1px solid var(--s100); border-radius: var(--radius);
+  padding: 1.6rem 1.75rem;
+}
+.news-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.news-badge {
+  display: inline-flex; align-items: center;
+  font-size: 12px; font-weight: 600; color: var(--g800);
   background: var(--g50); border: 1px solid var(--g100);
-  border-radius: 8px; padding: 8px 10px; line-height: 1.35;
+  border-radius: 20px; padding: 5px 12px;
 }
-.news-title { font-size: 19px; font-weight: 600; color: var(--g900); line-height: 1.45; }
-.news-text { font-size: 15px; color: var(--s700); line-height: 1.8; margin-top: 0.45rem; }
-.news-projects {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px; margin-top: 1.25rem;
+.news-title { font-size: 21px; font-weight: 600; color: var(--g900); line-height: 1.45; margin-bottom: 0.4rem; }
+.news-text { font-size: 15px; color: var(--s700); line-height: 1.8; margin-bottom: 1.25rem; }
+.award-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.award-item {
+  background: rgba(255,255,255,0.72); border: 1px solid var(--s100);
+  border-left: 3px solid var(--t400); border-radius: var(--radius);
+  padding: 1rem;
 }
-.news-project {
-  border-left: 3px solid var(--t400); background: var(--s50);
-  padding: 0.9rem 1rem; border-radius: 6px;
-}
-.news-student { font-size: 15px; font-weight: 600; color: var(--g800); margin-bottom: 0.25rem; }
-.news-topic { font-size: 14px; color: var(--s700); line-height: 1.65; }
+.award-name { font-size: 15px; font-weight: 600; color: var(--g800); margin-bottom: 0.25rem; }
+.award-topic { font-size: 14px; color: var(--s700); line-height: 1.65; }
 
-/* ── BIO ── */
-.bio-text { font-size: 16px; color: #3a3a36; line-height: 1.9; max-width: 760px; }
+.join-band {
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2rem; align-items: start;
+  background: var(--g900); color: #fff; border-radius: var(--radius);
+  padding: 2rem;
+}
+.join-band .s-label { color: var(--t200); }
+.join-band .s-title { color: #fff; margin-bottom: 0.8rem; }
+.join-copy { font-size: 16px; color: rgba(255,255,255,0.76); line-height: 1.85; }
+.join-list { display: grid; gap: 10px; }
+.join-item {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius); padding: 1rem;
+}
+.join-title { font-size: 15px; font-weight: 600; color: var(--g100); margin-bottom: 0.25rem; }
+.join-text { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.65; }
+
+.bio-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: start; }
+.bio-text { font-size: 16px; color: #3a3a36; line-height: 1.9; }
 .bio-text + .bio-text { margin-top: 1.1rem; }
-
-/* ── RESEARCH ── */
-.research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
-.rc {
-  background: #fff; border: 1px solid var(--s100); border-radius: var(--radius);
-  padding: 1.5rem 1.35rem; position: relative; overflow: hidden;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-.rc:hover { border-color: var(--g200); box-shadow: 0 4px 20px rgba(58,108,17,0.09); }
-.rc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-.rc:nth-child(1)::before { background: var(--g400); }
-.rc:nth-child(2)::before { background: var(--t400); }
-.rc:nth-child(3)::before { background: var(--g200); }
-.rc:nth-child(4)::before { background: var(--s300); }
-.rc-icon { font-size: 26px; margin-bottom: 12px; display: block; }
-.rc-title { font-size: 15px; font-weight: 500; color: var(--g800); line-height: 1.45; margin-bottom: 8px; }
-.rc-sub { font-size: 13px; color: var(--s500); line-height: 1.6; }
-
-/* ── EDU + EXP ── */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
-.sub-h { font-size: 12px; font-weight: 600; color: var(--s300); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.1rem; }
-.edu-list { display: flex; flex-direction: column; gap: 12px; }
+.two-col { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+.sub-h { font-size: 12px; font-weight: 600; color: var(--s300); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.7rem; }
+.edu-list { display: flex; flex-direction: column; gap: 10px; }
 .edu-item {
-  display: flex; align-items: flex-start; gap: 13px;
-  padding: 14px 18px; background: var(--g50);
-  border-radius: 10px; border: 1px solid var(--g100);
+  display: flex; align-items: flex-start; gap: 11px;
+  padding: 12px 14px; background: var(--g50);
+  border-radius: var(--radius); border: 1px solid var(--g100);
 }
-.edu-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--g400); flex-shrink: 0; margin-top: 6px; }
-.edu-text { font-size: 15px; color: var(--g800); line-height: 1.55; }
+.edu-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--g400); flex-shrink: 0; margin-top: 7px; }
+.edu-text { font-size: 14px; color: var(--g800); line-height: 1.55; }
 .edu-text strong { font-weight: 500; }
 .timeline { display: flex; flex-direction: column; }
 .ti {
-  display: grid; grid-template-columns: 115px 1fr;
-  gap: 1rem; padding: 1.1rem 0;
+  display: grid; grid-template-columns: 98px 1fr;
+  gap: 0.9rem; padding: 0.85rem 0;
   border-bottom: 1px solid var(--s100); align-items: start;
 }
 .ti:last-child { border-bottom: none; }
-.ti-year { font-size: 13px; color: var(--s300); padding-top: 2px; letter-spacing: 0.03em; }
-.ti-title { font-size: 15px; font-weight: 500; color: var(--g800); }
-.ti-sub { font-size: 14px; color: var(--s500); margin-top: 3px; line-height: 1.5; }
+.ti-year { font-size: 13px; color: var(--s300); padding-top: 2px; }
+.ti-title { font-size: 14px; font-weight: 600; color: var(--g800); }
+.ti-sub { font-size: 13px; color: var(--s500); margin-top: 2px; line-height: 1.5; }
 
-/* ── MORE LINKS ── */
 .nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 13px; }
 .nav-card {
-  padding: 1.1rem 1.35rem; border: 1px solid var(--s100);
-  border-radius: var(--radius); background: #fff;
+  padding: 1.1rem 1.25rem; border: 1px solid var(--s100);
+  border-radius: var(--radius); background: var(--white);
   display: flex; align-items: center; gap: 14px;
   text-decoration: none; transition: all 0.2s;
 }
 .nav-card:hover { border-color: var(--g200); background: var(--g50); transform: translateY(-1px); box-shadow: 0 3px 12px rgba(58,108,17,0.08); }
-.nc-icon { font-size: 24px; flex-shrink: 0; }
-.nc-title { font-size: 15px; font-weight: 500; color: var(--g800); }
+.nc-icon { font-size: 12px; flex-shrink: 0; color: var(--t600); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.nc-title { font-size: 15px; font-weight: 600; color: var(--g800); }
 .nc-sub { font-size: 13px; color: var(--s500); margin-top: 2px; }
 
-/* ── FOOTER ── */
 footer { background: var(--g900); padding: 3rem 2rem; }
 .footer-inner {
   max-width: var(--max); margin: 0 auto;
@@ -257,24 +261,37 @@ footer { background: var(--g900); padding: 3rem 2rem; }
 .f-right a:hover { text-decoration: underline; }
 .f-right p { font-size: 13px; color: var(--g400); margin-top: 4px; }
 
-/* ── MOBILE ── */
+@media (max-width: 940px) {
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 13px; }
+  .hero { grid-template-columns: 1fr 280px; gap: 2.5rem; }
+  .feature-grid, .crop-grid { grid-template-columns: repeat(2, 1fr); }
+  .work-map { grid-template-columns: repeat(2, 1fr); }
+  .work-step:nth-child(2) { border-right: none; }
+  .work-step:nth-child(-n+2) { border-bottom: 1px solid var(--s100); }
+  .bio-wrap { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 780px) {
-  .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem 2.5rem; }
-  .hero-photo { order: -1; max-width: 220px; margin: 0 auto; }
-  .photo-frame { aspect-ratio: 1/1; border-radius: 6px 36px 6px 36px; }
-  .news-head { flex-direction: column; gap: 0.8rem; }
-  .news-date { text-align: left; }
+  nav { padding: 0 1.5rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
-    position: absolute; top: 60px; left: 0; right: 0;
+    position: absolute; top: 64px; left: 0; right: 0;
     background: rgba(248,247,243,0.98);
     border-bottom: 1px solid var(--s100);
-    padding: 1.25rem 2rem 1.75rem; gap: 1.1rem; z-index: 199;
+    padding: 1.25rem 2rem 1.75rem; gap: 1rem; z-index: 199;
   }
   .nav-menu-btn { display: block; }
-  .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2.5rem; }
+  .hero-panel { max-width: 260px; margin: 0 auto; order: -1; }
+  .hero-title { font-size: clamp(38px, 12vw, 52px); }
   section { padding: 3rem 1.5rem; }
+  .feature-grid, .crop-grid, .work-map, .award-list, .join-band { grid-template-columns: 1fr; }
+  .work-step, .work-step:nth-child(2) { border-right: none; border-bottom: 1px solid var(--s100); }
+  .work-step:last-child { border-bottom: none; }
+  .news-top { align-items: flex-start; flex-direction: column; }
+  .join-band { padding: 1.5rem; }
   .footer-inner { flex-direction: column; }
   .f-right { text-align: left; }
 }
@@ -282,7 +299,6 @@ footer { background: var(--g900); padding: 3rem 2rem; }
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand">
     <span class="nav-brand-en">TraitMap Lab</span>
@@ -291,293 +307,361 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   </a>
   <div class="nav-right">
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="zh">簡介</a><a href="#about" class="en">About</a></li>
-      <li><a href="#news" class="zh">最新消息</a><a href="#news" class="en">News</a></li>
+      <li><a href="#about" class="zh">首頁</a><a href="#about" class="en">Home</a></li>
+      <li><a href="#signature" class="zh">特色</a><a href="#signature" class="en">Focus</a></li>
       <li><a href="#research" class="zh">研究</a><a href="#research" class="en">Research</a></li>
-      <li><a href="#experience" class="zh">學經歷</a><a href="#experience" class="en">CV</a></li>
-      <li><a href="members.html" class="zh">團隊成員</a><a href="members.html" class="en">Members</a></li>
+      <li><a href="#news" class="zh">最新消息</a><a href="#news" class="en">News</a></li>
+      <li><a href="#join" class="zh">加入我們</a><a href="#join" class="en">Join</a></li>
+      <li><a href="members.html" class="zh">團隊</a><a href="members.html" class="en">Members</a></li>
       <li><a href="publications.html" class="zh">著作</a><a href="publications.html" class="en">Publications</a></li>
-      <li><a href="#more" class="zh">更多</a><a href="#more" class="en">More</a></li>
     </ul>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
     <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero" id="about">
-  <div>
-    <p class="hero-eyebrow zh">國立中興大學 · 農藝學系</p>
-    <p class="hero-eyebrow en">Department of Agronomy · National Chung Hsing University</p>
-    <h1 class="hero-name zh">鄭舒允</h1>
-    <h1 class="hero-name en" style="font-size: clamp(38px,4.5vw,58px);">Shu-Yun Chen</h1>
-    <span class="hero-name-sub zh">Shu-Yun Chen</span>
-    <span class="hero-name-sub en">鄭舒允</span>
-    <div class="hero-title-badge">
-      <span class="zh">副教授 Associate Professor</span>
-      <span class="en">Associate Professor</span>
+<main>
+  <div class="hero" id="about">
+    <div>
+      <p class="hero-kicker zh">國立中興大學農藝學系</p>
+      <p class="hero-kicker en">Department of Agronomy, NCHU</p>
+      <h1 class="hero-title zh">從作物性狀到分子標記，推進精準育種</h1>
+      <h1 class="hero-title en">Mapping crop traits into precision breeding tools</h1>
+      <p class="hero-desc zh">TraitMap Lab 連結田間性狀、基因體資料與分子育種，利用 GWAS、RNA-seq、BSA-seq 與高通量表型分析，解析作物抗病與逆境反應，並開發可應用於育種的分子標記。</p>
+      <p class="hero-desc en">TraitMap Lab connects field traits, genomic data, and molecular breeding. We integrate GWAS, RNA-seq, BSA-seq, and high-throughput phenotyping to study crop disease resistance and stress responses, then translate discoveries into breeding-ready molecular markers.</p>
+      <div class="hero-actions">
+        <a href="#research" class="action primary zh">看研究主軸</a>
+        <a href="#research" class="action primary en">Explore Research</a>
+        <a href="#join" class="action secondary zh">加入實驗室</a>
+        <a href="#join" class="action secondary en">Join the Lab</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Crop Genomics</span>
+        <span class="tag">Disease Resistance</span>
+        <span class="tag">GWAS / spGWAS</span>
+        <span class="tag">RNA-seq</span>
+        <span class="tag">BSA-seq</span>
+        <span class="tag">Molecular Breeding</span>
+      </div>
     </div>
-    <p class="hero-desc zh">TraitMap Lab 專研基因體學與分子育種，整合 GWAS、RNA-seq、BSA-seq 等技術，致力於農園藝作物抗病機制解析與分子標記輔助育種（MAS）。</p>
-    <p class="hero-desc en">TraitMap Lab focuses on crop genomics and precision breeding, integrating GWAS, RNA-seq, and BSA-seq to uncover disease-resistance mechanisms and accelerate marker-assisted selection (MAS) in agricultural and horticultural crops.</p>
-    <div class="hero-tags">
-      <span class="tag">Functional Genomics</span>
-      <span class="tag">GWAS / spGWAS</span>
-      <span class="tag">RNA-seq</span>
-      <span class="tag">BSA-seq</span>
-      <span class="tag">Molecular Breeding</span>
-      <span class="tag">Smart Agriculture</span>
-    </div>
-    <div class="hero-contact" id="contact">
-      <div class="ci"><span class="cl zh">信箱</span><span class="cl en">Email</span><a href="mailto:syc@nchu.edu.tw" class="cv">syc@nchu.edu.tw</a></div>
-      <div class="ci"><span class="cl zh">電話</span><span class="cl en">Tel</span><span>+886-4-2284-0777 #703</span></div>
-      <div class="ci"><span class="cl zh">傳真</span><span class="cl en">Fax</span><span>04-22877054</span></div>
-      <div class="ci"><span class="cl zh">辦公室</span><span class="cl en">Office</span><span class="zh">作物科學大樓 農藝學系 A703</span><span class="en">Crop Science Building A703, Dept. of Agronomy</span></div>
-    </div>
-  </div>
-  <div class="hero-photo">
-    <div class="photo-frame">
-      <!-- Replace with: <img src="images/chen.jpg" alt="Prof. Shu-Yun Chen"> -->
-	  <img src="images/photo.jpg" alt="Prof. Shu-Yun Chen">
-    </div>
-    <div class="photo-badge">
-      <div class="badge-en">Associate Professor</div>
-      <div class="badge-dept">Dept. of Agronomy, NCHU</div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- NEWS -->
-<section id="news">
-  <p class="s-label">News</p>
-  <h2 class="s-title zh">最新消息</h2>
-  <h2 class="s-title en">Latest News</h2>
-  <div class="news-list">
-    <article class="news-item">
-      <div class="news-head">
-        <div class="news-date zh">115年度<br>國科會</div>
-        <div class="news-date en">2026<br>NSTC</div>
-        <div>
-          <h3 class="news-title zh">恭賀大學部學生趙芝瑩、盧昱婷榮獲國科會大專學生研究計畫</h3>
-          <h3 class="news-title en">Congratulations to Undergraduate Researchers Chih-Ying Chao and Yu-Ting Lu (Ashli)</h3>
-          <p class="news-text zh">恭喜兩位同學研究提案獲得肯定，展現優秀研究潛力。</p>
-          <p class="news-text en">Congratulations to Chih-Ying Chao and Yu-Ting Lu (Ashli) on receiving support from the NSTC Undergraduate Student Research Project program, recognizing the promise and quality of their research proposals.</p>
+    <aside class="hero-panel" aria-label="Principal Investigator">
+      <div class="hero-photo">
+        <img src="images/photo.jpg" alt="Prof. Shu-Yun Chen">
+      </div>
+      <div class="hero-panel-body">
+        <p class="pi-role zh">實驗室主持人</p>
+        <p class="pi-role en">Principal Investigator</p>
+        <h2 class="pi-name zh">鄭舒允</h2>
+        <h2 class="pi-name en">Shu-Yun Chen</h2>
+        <p class="pi-sub zh">副教授 · 國立中興大學農藝學系</p>
+        <p class="pi-sub en">Associate Professor · Dept. of Agronomy</p>
+        <div class="contact-lines">
+          <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
+          <span class="zh">作物科學大樓 A703</span>
+          <span class="en">Crop Science Building A703</span>
         </div>
       </div>
-      <div class="news-projects">
-        <div class="news-project">
-          <div class="news-student zh">趙芝瑩</div>
-          <div class="news-student en">Chih-Ying Chao</div>
-          <p class="news-topic zh">題目：絲瓜抗萎凋病防禦機制的跨層級驗證</p>
-          <p class="news-topic en">Project: Cross-Level Validation of Defense Mechanisms Against Fusarium Wilt in Luffa</p>
+    </aside>
+  </div>
+
+  <div class="divider"></div>
+
+  <section id="signature">
+    <p class="s-label">Lab Signature</p>
+    <h2 class="s-title zh">TraitMap Lab 的研究特色</h2>
+    <h2 class="s-title en">What makes TraitMap Lab distinctive</h2>
+    <p class="s-intro zh">我們的核心不是只做單一技術，而是把「性狀觀察、基因體分析、候選基因驗證、育種應用」串成同一條研究路徑。</p>
+    <p class="s-intro en">Our strength is not a single technique. We connect trait observation, genomic analysis, candidate-gene validation, and breeding application into one research path.</p>
+    <div class="feature-grid">
+      <article class="feature">
+        <div class="feature-no">01</div>
+        <h3 class="feature-title zh">從田間問題出發</h3>
+        <h3 class="feature-title en">Trait-first questions</h3>
+        <p class="feature-text zh">以抗病、逆境、產量與重要農藝性狀為起點，讓研究題目貼近作物改良需求。</p>
+        <p class="feature-text en">We begin with disease resistance, stress response, yield, and agronomic traits that matter for crop improvement.</p>
+      </article>
+      <article class="feature">
+        <div class="feature-no">02</div>
+        <h3 class="feature-title zh">多層級資料整合</h3>
+        <h3 class="feature-title en">Multi-layer data integration</h3>
+        <p class="feature-text zh">整合表型、基因型、轉錄體與族群資料，解析性狀背後的遺傳調控。</p>
+        <p class="feature-text en">We integrate phenotypes, genotypes, transcriptomes, and population data to understand trait regulation.</p>
+      </article>
+      <article class="feature">
+        <div class="feature-no">03</div>
+        <h3 class="feature-title zh">走向育種應用</h3>
+        <h3 class="feature-title en">Toward breeding tools</h3>
+        <p class="feature-text zh">將研究成果轉化為分子標記與篩選策略，支援抗病品種與精準育種。</p>
+        <p class="feature-text en">We translate discoveries into molecular markers and screening strategies for precision breeding.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="research">
+    <p class="s-label">Research</p>
+    <h2 class="s-title zh">我們如何把性狀變成育種線索</h2>
+    <h2 class="s-title en">How we turn traits into breeding leads</h2>
+    <p class="s-intro zh">實驗室訓練學生同時理解作物、分子實驗與資料分析，從研究設計到結果詮釋都能看見完整脈絡。</p>
+    <p class="s-intro en">Students learn to connect crop biology, molecular experiments, and data analysis, seeing the full logic from study design to biological interpretation.</p>
+    <div class="work-map">
+      <article class="work-step">
+        <p class="work-step-label">Step 1</p>
+        <h3 class="work-step-title zh">表型與材料</h3>
+        <h3 class="work-step-title en">Phenotypes &amp; materials</h3>
+        <p class="work-step-text zh">建立作物材料、病害或逆境處理，以及可量化的性狀資料。</p>
+        <p class="work-step-text en">Build plant materials, disease or stress assays, and measurable trait data.</p>
+      </article>
+      <article class="work-step">
+        <p class="work-step-label">Step 2</p>
+        <h3 class="work-step-title zh">基因體定位</h3>
+        <h3 class="work-step-title en">Genomic mapping</h3>
+        <p class="work-step-text zh">利用 GWAS、spGWAS、BSA-seq 或族群資料找出關聯區域。</p>
+        <p class="work-step-text en">Use GWAS, spGWAS, BSA-seq, or population datasets to identify associated loci.</p>
+      </article>
+      <article class="work-step">
+        <p class="work-step-label">Step 3</p>
+        <h3 class="work-step-title zh">轉錄體與候選基因</h3>
+        <h3 class="work-step-title en">Transcriptomes &amp; genes</h3>
+        <p class="work-step-text zh">透過 RNA-seq 與表現分析縮小候選基因並推論調控機制。</p>
+        <p class="work-step-text en">Use RNA-seq and expression analysis to refine candidate genes and mechanisms.</p>
+      </article>
+      <article class="work-step">
+        <p class="work-step-label">Step 4</p>
+        <h3 class="work-step-title zh">分子標記與應用</h3>
+        <h3 class="work-step-title en">Markers &amp; application</h3>
+        <p class="work-step-text zh">開發分子標記，協助抗病、耐逆境與重要性狀的育種選拔。</p>
+        <p class="work-step-text en">Develop markers to support selection for resistance, stress tolerance, and key traits.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <p class="s-label">Crop Systems</p>
+    <h2 class="s-title zh">目前關注的作物與問題</h2>
+    <h2 class="s-title en">Current crop systems and questions</h2>
+    <div class="crop-grid">
+      <article class="crop">
+        <h3 class="crop-name zh">絲瓜</h3>
+        <h3 class="crop-name en">Luffa</h3>
+        <p class="crop-meta zh">抗萎凋病 · 防禦機制</p>
+        <p class="crop-meta en">Fusarium wilt · defense mechanisms</p>
+        <p class="crop-text zh">解析抗病材料的早期反應、候選基因與跨層級驗證。</p>
+        <p class="crop-text en">Studying early resistance responses, candidate genes, and cross-level validation.</p>
+      </article>
+      <article class="crop">
+        <h3 class="crop-name zh">甘藷</h3>
+        <h3 class="crop-name en">Sweet potato</h3>
+        <p class="crop-meta zh">多倍體基因體 · 農藝性狀</p>
+        <p class="crop-meta en">Polyploid genomics · agronomic traits</p>
+        <p class="crop-text zh">面對多倍體作物的基因型資料、表型量測與 GWAS 挑戰。</p>
+        <p class="crop-text en">Working with genotype data, phenotyping, and GWAS challenges in polyploid crops.</p>
+      </article>
+      <article class="crop">
+        <h3 class="crop-name zh">苦瓜</h3>
+        <h3 class="crop-name en">Bitter melon</h3>
+        <p class="crop-meta zh">抗病育種 · 分子標記</p>
+        <p class="crop-meta en">Resistance breeding · markers</p>
+        <p class="crop-text zh">尋找可支援品種改良的抗病相關基因體線索。</p>
+        <p class="crop-text en">Identifying genomic leads that can support resistance breeding.</p>
+      </article>
+      <article class="crop">
+        <h3 class="crop-name zh">番茄</h3>
+        <h3 class="crop-name en">Tomato</h3>
+        <p class="crop-meta zh">高濕度 · 花粉發育</p>
+        <p class="crop-meta en">High humidity · pollen development</p>
+        <p class="crop-text zh">研究高濕度誘導花脫落與花粉發育調控基因的分子特性。</p>
+        <p class="crop-text en">Investigating pollen-development genes associated with humidity-induced flower abscission.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="news">
+    <p class="s-label">News</p>
+    <h2 class="s-title zh">最新消息</h2>
+    <h2 class="s-title en">Latest News</h2>
+    <article class="news-card">
+      <div class="news-top">
+        <span class="news-badge zh">115年度國科會大專學生研究計畫</span>
+        <span class="news-badge en">2026 NSTC Undergraduate Student Research Project</span>
+      </div>
+      <h3 class="news-title zh">恭賀大學部學生趙芝瑩、盧昱婷研究提案獲得肯定</h3>
+      <h3 class="news-title en">Congratulations to Chih-Ying Chao and Yu-Ting Lu (Ashli)</h3>
+      <p class="news-text zh">兩位同學展現優秀研究潛力，研究主題分別聚焦於絲瓜抗萎凋病防禦機制，以及高濕度條件下番茄花粉發育調控。</p>
+      <p class="news-text en">Their proposals highlight promising undergraduate research in luffa disease-defense mechanisms and tomato pollen-development regulation under high humidity.</p>
+      <div class="award-list">
+        <div class="award-item">
+          <div class="award-name zh">趙芝瑩</div>
+          <div class="award-name en">Chih-Ying Chao</div>
+          <p class="award-topic zh">絲瓜抗萎凋病防禦機制的跨層級驗證</p>
+          <p class="award-topic en">Cross-Level Validation of Defense Mechanisms Against Fusarium Wilt in Luffa</p>
         </div>
-        <div class="news-project">
-          <div class="news-student zh">盧昱婷</div>
-          <div class="news-student en">Yu-Ting Lu (Ashli)</div>
-          <p class="news-topic zh">題目：高濕度條件誘導番茄花脫落相關花粉發育調控基因之分子特性研究</p>
-          <p class="news-topic en">Project: Molecular Characterization of Pollen-Development Regulatory Genes Associated with Flower Abscission under High-Humidity Conditions in Tomato</p>
+        <div class="award-item">
+          <div class="award-name zh">盧昱婷</div>
+          <div class="award-name en">Yu-Ting Lu (Ashli)</div>
+          <p class="award-topic zh">高濕度條件誘導番茄花脫落相關花粉發育調控基因之分子特性研究</p>
+          <p class="award-topic en">Molecular Characterization of Pollen-Development Regulatory Genes Associated with Flower Abscission under High-Humidity Conditions in Tomato</p>
         </div>
       </div>
     </article>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
-
-<!-- BIO -->
-<section>
-  <p class="s-label">Biography</p>
-  <h2 class="s-title zh">學術簡介</h2>
-  <h2 class="s-title en">About</h2>
-  <p class="bio-text zh">鄭舒允副教授任職於國立中興大學農藝學系，研究專長為基因體學與分子育種。取得博士學位後，赴康乃爾大學 Edward Buckler 實驗室從事玉米 miRNA eQTL GWAS 研究，後於中央研究院植物暨微生物學研究所應用 RNA-seq 與 BSA-seq 探討玉米減數分裂中的基因調控與甲基化機制。此後於經緯航太科技任職兩年，累積無人機（UAV）智慧農業實務經驗，再於成功大學從事蝴蝶蘭抗鐮孢菌基因鑑定研究，為蝴蝶蘭抗病 GWAS 奠立系統性基礎。</p>
-  <p class="bio-text en">Dr. Shu-Yun Chen is an Associate Professor in the Department of Agronomy at National Chung Hsing University (NCHU). After completing her Ph.D., she conducted maize miRNA eQTL GWAS research in Edward Buckler's lab at Cornell University, followed by postdoctoral research at Academia Sinica applying RNA-seq and BSA-seq to study gene regulation and methylation during maize meiosis. She then worked at GeoSat Aerospace & Technology for two years, gaining practical expertise in UAV-based smart agriculture, before joining NCKU to investigate Fusarium resistance genes in Phalaenopsis orchids.</p>
-  <p class="bio-text zh" style="margin-top:1rem;">目前於中興大學持續推動絲瓜、甘藷、苦瓜等作物之抗病研究，結合單株 GWAS（spGWAS）與 RNA-seq 開發分子標記，加速抗病品種育成。</p>
-  <p class="bio-text en" style="margin-top:1rem;">At NCHU, her lab continues advancing disease-resistance research in luffa, sweet potato, and bitter melon, combining single-plant GWAS (spGWAS) with RNA-seq to develop molecular markers that accelerate resistant variety breeding.</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- RESEARCH -->
-<section id="research">
-  <p class="s-label">Research</p>
-  <h2 class="s-title zh">研究領域</h2>
-  <h2 class="s-title en">Research Interests</h2>
-  <div class="research-grid">
-    <div class="rc">
-      <span class="rc-icon">🧬</span>
-      <div class="rc-title zh">功能性基因體學及基因工程</div>
-      <div class="rc-title en">Functional Genomics &amp; Genetic Engineering</div>
-      <div class="rc-sub">Agricultural and horticultural crops</div>
-    </div>
-    <div class="rc">
-      <span class="rc-icon">🌱</span>
-      <div class="rc-title zh">作物遺傳與育種學</div>
-      <div class="rc-title en">Crop Genetics &amp; Breeding</div>
-      <div class="rc-sub">MAS, GWAS, spGWAS, BSA-seq</div>
-    </div>
-    <div class="rc">
-      <span class="rc-icon">🔬</span>
-      <div class="rc-title zh">種緣鑑定及種質保存</div>
-      <div class="rc-title en">Species ID &amp; Germplasm Conservation</div>
-      <div class="rc-sub">Molecular markers &amp; diversity analysis</div>
-    </div>
-    <div class="rc">
-      <span class="rc-icon">🚁</span>
-      <div class="rc-title zh">作物生物技術與智慧農業</div>
-      <div class="rc-title en">Crop Biotech &amp; Smart Agriculture</div>
-      <div class="rc-sub">UAV remote sensing applications</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- EDUCATION & EXPERIENCE -->
-<section id="experience">
-  <p class="s-label">Education &amp; Experience</p>
-  <h2 class="s-title zh">學歷與經歷</h2>
-  <h2 class="s-title en">Curriculum Vitae</h2>
-  <div class="two-col">
-    <div>
-      <p class="sub-h zh">學歷</p>
-      <p class="sub-h en">Education</p>
-      <div class="edu-list">
-        <div class="edu-item">
-          <div class="edu-dot"></div>
-          <div class="edu-text zh">國立中興大學 農藝系 作物遺傳育種組<br><strong>博士 Ph.D.</strong></div>
-          <div class="edu-text en">National Chung Hsing University<br>Dept. of Agronomy (Crop Genetics &amp; Breeding)<br><strong>Ph.D.</strong></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-dot"></div>
-          <div class="edu-text zh">國立中興大學 農藝系<br><strong>碩士 M.S.</strong></div>
-          <div class="edu-text en">National Chung Hsing University<br>Dept. of Agronomy<br><strong>M.S.</strong></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <p class="sub-h zh">經歷</p>
-      <p class="sub-h en">Experience</p>
-      <div class="timeline">
-        <div class="ti">
-          <div class="ti-year zh">現任</div>
-          <div class="ti-year en">Current</div>
-          <div>
-            <div class="ti-title zh">副教授</div>
-            <div class="ti-title en">Associate Professor</div>
-            <div class="ti-sub zh">國立中興大學 農藝學系</div>
-            <div class="ti-sub en">Dept. of Agronomy, NCHU</div>
-          </div>
-        </div>
-        <div class="ti">
-          <div class="ti-year">2021–2025</div>
-          <div>
-            <div class="ti-title zh">助理教授</div>
-            <div class="ti-title en">Assistant Professor</div>
-            <div class="ti-sub zh">國立中興大學 農藝學系</div>
-            <div class="ti-sub en">Dept. of Agronomy, NCHU</div>
-          </div>
-        </div>
-        <div class="ti">
-          <div class="ti-year">2019–2021</div>
-          <div>
-            <div class="ti-title zh">博士後研究員</div>
-            <div class="ti-title en">Postdoctoral Researcher</div>
-            <div class="ti-sub zh">國立成功大學 生命科學系</div>
-            <div class="ti-sub en">Dept. of Life Sciences, NCKU</div>
-          </div>
-        </div>
-        <div class="ti">
-          <div class="ti-year">—</div>
-          <div>
-            <div class="ti-title zh">專案經理</div>
-            <div class="ti-title en">Project Manager</div>
-            <div class="ti-sub zh">經緯航太科技 環境農業部</div>
-            <div class="ti-sub en">GeoSat Aerospace &amp; Technology, Agri-Env. Div.</div>
-          </div>
-        </div>
-        <div class="ti">
-          <div class="ti-year">—</div>
-          <div>
-            <div class="ti-title zh">博士後研究員</div>
-            <div class="ti-title en">Postdoctoral Researcher</div>
-            <div class="ti-sub zh">中央研究院 植物暨微生物學研究所</div>
-            <div class="ti-sub en">Institute of Plant &amp; Microbial Biology, Academia Sinica</div>
-          </div>
-        </div>
-        <div class="ti">
-          <div class="ti-year">—</div>
-          <div>
-            <div class="ti-title zh">博士後研究員</div>
-            <div class="ti-title en">Postdoctoral Researcher</div>
-            <div class="ti-sub">Cornell University — Institute for Genomic Diversity / Dept. of Plant Breeding &amp; Genetics</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- MORE -->
-<section id="more">
-  <p class="s-label">More</p>
-  <h2 class="s-title zh">更多內容</h2>
-  <h2 class="s-title en">Quick Links</h2>
-  <div class="nav-cards">
-    <a href="members.html" class="nav-card">
-      <span class="nc-icon">👥</span>
+  <section id="join">
+    <div class="join-band">
       <div>
-        <div class="nc-title zh">團隊成員</div>
-        <div class="nc-title en">Lab Members</div>
-        <div class="nc-sub zh">現任研究生・畢業生</div>
-        <div class="nc-sub en">Graduate students &amp; alumni</div>
+        <p class="s-label">Join Us</p>
+        <h2 class="s-title zh">適合想把生物問題和資料分析接起來的學生</h2>
+        <h2 class="s-title en">For students who want to connect biology and data</h2>
+        <p class="join-copy zh">我們歡迎對作物科學、分子育種、基因體學或生物資訊有興趣的學生。你不需要一開始就會所有技術，但需要願意在田間、實驗室與資料之間來回思考。</p>
+        <p class="join-copy en">We welcome students interested in crop science, molecular breeding, genomics, or bioinformatics. You do not need to know every technique at the start, but curiosity across field work, wet-lab work, and data analysis matters here.</p>
       </div>
-    </a>
-    <a href="https://sites.google.com/email.nchu.edu.tw/shuyun-chen/%E6%95%99%E6%8E%88%E8%AA%B2%E7%A8%8B%E8%88%87%E8%AC%9B%E7%BE%A9courses-and-teaching" target="_blank" rel="noopener" class="nav-card">
-      <span class="nc-icon">📚</span>
-      <div>
-        <div class="nc-title zh">課程與講義</div>
-        <div class="nc-title en">Courses &amp; Teaching</div>
-        <div class="nc-sub">Google Sites</div>
+      <div class="join-list">
+        <article class="join-item">
+          <h3 class="join-title zh">可以學到</h3>
+          <h3 class="join-title en">What you can learn</h3>
+          <p class="join-text zh">作物表型調查、DNA/RNA 實驗、定序資料處理、GWAS、轉錄體分析與分子標記設計。</p>
+          <p class="join-text en">Crop phenotyping, DNA/RNA experiments, sequencing data processing, GWAS, transcriptome analysis, and marker design.</p>
+        </article>
+        <article class="join-item">
+          <h3 class="join-title zh">歡迎加入</h3>
+          <h3 class="join-title en">Opportunities</h3>
+          <p class="join-text zh">大學部專題生、碩士生、博士生，以及對跨領域作物研究有興趣的合作夥伴。</p>
+          <p class="join-text en">Undergraduate researchers, M.S. students, Ph.D. students, and collaborators interested in cross-disciplinary crop research.</p>
+        </article>
       </div>
-    </a>
-    <a href="publications.html" class="nav-card">
-      <span class="nc-icon">📄</span>
-      <div>
-        <div class="nc-title zh">論文與著作</div>
-        <div class="nc-title en">Publications</div>
-        <div class="nc-sub zh">期刊論文・著作</div>
-        <div class="nc-sub en">Journal articles &amp; books</div>
-      </div>
-    </a>
-    <a href="https://sites.google.com/email.nchu.edu.tw/shuyun-chen/%E6%B4%BB%E5%8B%95%E7%85%A7%E7%89%87-photos" target="_blank" rel="noopener" class="nav-card">
-      <span class="nc-icon">🖼️</span>
-      <div>
-        <div class="nc-title zh">活動照片</div>
-        <div class="nc-title en">Photos</div>
-        <div class="nc-sub">Google Sites</div>
-      </div>
-    </a>
-    <a href="https://github.com/TraitMap-Lab" target="_blank" rel="noopener" class="nav-card">
-      <span class="nc-icon">💻</span>
-      <div>
-        <div class="nc-title">GitHub</div>
-        <div class="nc-sub">TraitMap-Lab</div>
-      </div>
-    </a>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- FOOTER -->
+  <div class="divider"></div>
+
+  <section id="pi">
+    <p class="s-label">PI &amp; Background</p>
+    <h2 class="s-title zh">主持人與研究背景</h2>
+    <h2 class="s-title en">Principal investigator and background</h2>
+    <div class="bio-wrap">
+      <div>
+        <p class="bio-text zh">鄭舒允副教授任職於國立中興大學農藝學系，研究專長為基因體學與分子育種。取得博士學位後，赴康乃爾大學 Edward Buckler 實驗室從事玉米 miRNA eQTL GWAS 研究，後於中央研究院植物暨微生物學研究所應用 RNA-seq 與 BSA-seq 探討玉米減數分裂中的基因調控與甲基化機制。</p>
+        <p class="bio-text en">Dr. Shu-Yun Chen is an Associate Professor in the Department of Agronomy at National Chung Hsing University. After completing her Ph.D., she conducted maize miRNA eQTL GWAS research in Edward Buckler's lab at Cornell University, followed by postdoctoral research at Academia Sinica applying RNA-seq and BSA-seq to study gene regulation and methylation during maize meiosis.</p>
+        <p class="bio-text zh">她也曾於經緯航太科技累積 UAV 智慧農業實務經驗，並於成功大學從事蝴蝶蘭抗鐮孢菌基因鑑定研究。現在於中興大學推動絲瓜、甘藷、苦瓜等作物之抗病與重要性狀研究。</p>
+        <p class="bio-text en">She also gained UAV-based smart agriculture experience at GeoSat Aerospace &amp; Technology and studied Fusarium resistance genes in Phalaenopsis orchids at NCKU. At NCHU, her lab advances disease-resistance and trait research in luffa, sweet potato, bitter melon, and related crops.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <p class="sub-h zh">學歷</p>
+          <p class="sub-h en">Education</p>
+          <div class="edu-list">
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div class="edu-text zh">國立中興大學 農藝系 作物遺傳育種組<br><strong>博士 Ph.D.</strong></div>
+              <div class="edu-text en">National Chung Hsing University<br>Dept. of Agronomy (Crop Genetics &amp; Breeding)<br><strong>Ph.D.</strong></div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div class="edu-text zh">國立中興大學 農藝系<br><strong>碩士 M.S.</strong></div>
+              <div class="edu-text en">National Chung Hsing University<br>Dept. of Agronomy<br><strong>M.S.</strong></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="sub-h zh">經歷</p>
+          <p class="sub-h en">Experience</p>
+          <div class="timeline">
+            <div class="ti">
+              <div class="ti-year zh">現任</div>
+              <div class="ti-year en">Current</div>
+              <div>
+                <div class="ti-title zh">副教授</div>
+                <div class="ti-title en">Associate Professor</div>
+                <div class="ti-sub zh">國立中興大學 農藝學系</div>
+                <div class="ti-sub en">Dept. of Agronomy, NCHU</div>
+              </div>
+            </div>
+            <div class="ti">
+              <div class="ti-year">2021-2025</div>
+              <div>
+                <div class="ti-title zh">助理教授</div>
+                <div class="ti-title en">Assistant Professor</div>
+                <div class="ti-sub zh">國立中興大學 農藝學系</div>
+                <div class="ti-sub en">Dept. of Agronomy, NCHU</div>
+              </div>
+            </div>
+            <div class="ti">
+              <div class="ti-year">2019-2021</div>
+              <div>
+                <div class="ti-title zh">博士後研究員</div>
+                <div class="ti-title en">Postdoctoral Researcher</div>
+                <div class="ti-sub zh">國立成功大學 生命科學系</div>
+                <div class="ti-sub en">Dept. of Life Sciences, NCKU</div>
+              </div>
+            </div>
+            <div class="ti">
+              <div class="ti-year">Earlier</div>
+              <div>
+                <div class="ti-title zh">博士後研究員 / 專案經理</div>
+                <div class="ti-title en">Postdoctoral Researcher / Project Manager</div>
+                <div class="ti-sub">Cornell University, Academia Sinica, GeoSat Aerospace &amp; Technology</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="more">
+    <p class="s-label">More</p>
+    <h2 class="s-title zh">深入了解 TraitMap Lab</h2>
+    <h2 class="s-title en">Explore TraitMap Lab</h2>
+    <div class="nav-cards">
+      <a href="members.html" class="nav-card">
+        <span class="nc-icon">Members</span>
+        <div>
+          <div class="nc-title zh">團隊成員</div>
+          <div class="nc-title en">Lab Members</div>
+          <div class="nc-sub zh">現任研究生・大學部專題生・畢業生</div>
+          <div class="nc-sub en">Graduate students, undergraduates, and alumni</div>
+        </div>
+      </a>
+      <a href="publications.html" class="nav-card">
+        <span class="nc-icon">Papers</span>
+        <div>
+          <div class="nc-title zh">論文與著作</div>
+          <div class="nc-title en">Publications</div>
+          <div class="nc-sub zh">期刊論文・著作</div>
+          <div class="nc-sub en">Journal articles and books</div>
+        </div>
+      </a>
+      <a href="https://sites.google.com/email.nchu.edu.tw/shuyun-chen/%E6%B4%BB%E5%8B%95%E7%85%A7%E7%89%87-photos" target="_blank" rel="noopener" class="nav-card">
+        <span class="nc-icon">Photos</span>
+        <div>
+          <div class="nc-title zh">活動照片</div>
+          <div class="nc-title en">Photos</div>
+          <div class="nc-sub">Google Sites</div>
+        </div>
+      </a>
+      <a href="https://github.com/TraitMap-Lab" target="_blank" rel="noopener" class="nav-card">
+        <span class="nc-icon">GitHub</span>
+        <div>
+          <div class="nc-title">GitHub</div>
+          <div class="nc-sub">TraitMap-Lab</div>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
 <footer>
   <div class="footer-inner">
     <div>
       <div class="f-logo">TraitMap<span> Lab</span></div>
       <div class="f-sub zh" style="margin-top:6px;">作物基因體與精準育種實驗室<br>國立中興大學 農藝學系<br>台中市 402 南區興大路 145 號</div>
       <div class="f-sub en" style="margin-top:6px;">Crop Genomics &amp; Precision Breeding Laboratory<br>Department of Agronomy, NCHU<br>145 Xingda Rd., South Dist., Taichung 402, Taiwan</div>
-      <div class="f-copy">© 2025 TraitMap Lab, NCHU · Tel: 04-22873181</div>
+      <div class="f-copy">© 2026 TraitMap Lab, NCHU</div>
     </div>
     <div class="f-right">
       <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
