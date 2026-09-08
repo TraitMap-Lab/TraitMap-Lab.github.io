@@ -150,6 +150,8 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem; }
 [data-group="visiting"] .member-badge { background: #e5f3ff; color: #126a8a; }
 [data-group="alumni"]   .member-badge { background: #ede8f8; color: #6040a0; }
 .member-topic { font-size: 13px; color: var(--s500); line-height: 1.55; flex: 1; }
+.member-topic a { color: var(--t600); font-weight: 500; text-decoration: none; }
+.member-topic a:hover { text-decoration: underline; }
 .member-now { font-size: 12px; color: var(--t600); margin-top: 6px; font-weight: 500; }
 
 /* EMPTY SLOT */
@@ -225,8 +227,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
     <p class="ph-label">TraitMap Lab</p>
     <h1 class="ph-title zh">團隊成員</h1>
     <h1 class="ph-title en">Lab Members</h1>
-    <p class="ph-sub zh">現任研究生、大學生、國際訪問學生與畢業校友</p>
-    <p class="ph-sub en">Graduate students, undergraduates, international visiting students, and alumni</p>
+    <p class="ph-sub zh">博士班、碩士班、大學生、國際訪問學生與畢業校友</p>
+    <p class="ph-sub en">Ph.D. students, M.S. students, undergraduates, international visiting students, and alumni</p>
   </div>
 </div>
 
@@ -258,10 +260,10 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
 
 <div class="divider"></div>
 
-<section id="grad">
+<section id="phd">
   <p class="s-label">Current Members</p>
-  <h2 class="s-title zh">🎓 現任研究生</h2>
-  <h2 class="s-title en">🎓 Graduate Students</h2>
+  <h2 class="s-title zh">博士班學生</h2>
+  <h2 class="s-title en">Ph.D. Students</h2>
   <div class="members-grid">
 
     <div class="member-card" data-group="grad">
@@ -271,8 +273,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
       <div class="member-body">
         <div class="member-name zh">李崇瑋</div>
         <div class="member-name-en en">Chong-Wei Lee</div>
-        <span class="member-badge zh">碩士生 M.S. Student</span>
-        <span class="member-badge en">M.S. Student</span>
+        <span class="member-badge zh">博士生</span>
+        <span class="member-badge en">Ph.D. Student</span>
         <p class="member-topic zh">研究主題：<br>
           甘藷基因體<br>
           多倍體作物基因體<br>
@@ -287,32 +289,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
           High-Throughput Phenotyping<br>
           ddRAD-seq & NGS Genotyping
         </p>
-      </div>
-    </div>
-    
-    <div class="member-card" data-group="grad">
-      <div class="member-photo">
-        <img src="images/PRC.jpg" alt="陳柏儒">
-      </div>
-      <div class="member-body">
-        <div class="member-name zh">陳柏儒</div>
-        <div class="member-name-en en">Po-Ru Chen</div>
-        <span class="member-badge zh">碩士生 M.S. Student</span>
-        <span class="member-badge en">M.S. Student</span>
-        <p class="member-topic zh">研究主題：<br>
-          甘藷基因體<br>
-          多倍體作物基因體<br>
-          氮肥利用效率<br>
-          土壤與植物碳氮含量分析<br>
-          ddRAD-seq 與次世代定序
-        </p>
-        <p class="member-topic en">Research Topic:<br>
-          Sweet Potato Genetics<br>
-          Polyploid Crop Genomics<br>
-          Nitrogen Use efficiency<br>
-          Soil & Plant Carbon-Nitrogen Allocation Analysis<br>
-          ddRAD-seq & NGS Genotyping
-        </p>
+        <p class="member-now zh">2026/8/1 起為博士班學生</p>
+        <p class="member-now en">Ph.D. Student since August 1, 2026</p>
       </div>
     </div>
 
@@ -323,7 +301,7 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
       <div class="member-body">
         <div class="member-name zh">朱哲翰</div>
         <div class="member-name-en en">Che-Han Chu</div>
-        <span class="member-badge zh">博士生 Ph.D. Student</span>
+        <span class="member-badge zh">博士生</span>
         <span class="member-badge en">Ph.D. Student</span>
         <p class="member-topic zh">研究主題：<br>
           絲瓜基因體<br>
@@ -338,6 +316,43 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
           Mining of Disease Resistance Genes<br>
           Next-Generation Sequencing and Transcriptomic Analysis<br>
           High-Throughput Phenotyping
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="grad">
+  <p class="s-label">Current Members</p>
+  <h2 class="s-title zh">碩士班學生</h2>
+  <h2 class="s-title en">M.S. Students</h2>
+  <div class="members-grid">
+
+    <div class="member-card" data-group="grad">
+      <div class="member-photo">
+        <img src="images/PRC.jpg" alt="陳柏儒">
+      </div>
+      <div class="member-body">
+        <div class="member-name zh">陳柏儒</div>
+        <div class="member-name-en en">Po-Ru Chen</div>
+        <span class="member-badge zh">碩士生</span>
+        <span class="member-badge en">M.S. Student</span>
+        <p class="member-topic zh">研究主題：<br>
+          甘藷基因體<br>
+          多倍體作物基因體<br>
+          氮肥利用效率<br>
+          土壤與植物碳氮含量分析<br>
+          ddRAD-seq 與次世代定序
+        </p>
+        <p class="member-topic en">Research Topic:<br>
+          Sweet Potato Genetics<br>
+          Polyploid Crop Genomics<br>
+          Nitrogen Use efficiency<br>
+          Soil & Plant Carbon-Nitrogen Allocation Analysis<br>
+          ddRAD-seq & NGS Genotyping
         </p>
       </div>
     </div>
@@ -434,8 +449,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
         <div class="member-name">Nurul Hikma</div>
         <span class="member-badge zh">國際訪問學生</span>
         <span class="member-badge en">Visiting Student</span>
-        <p class="member-topic zh">國家：印尼<br>計畫來源：TTEP、IPB University</p>
-        <p class="member-topic en">Country: Indonesia<br>Program: TTEP, IPB University</p>
+        <p class="member-topic zh">國家：印尼<br>計畫：<a href="https://teep.studyintaiwan.org/about" target="_blank" rel="noopener">Taiwan Experience Education Program (TEEP)</a><br>原屬學校：IPB University</p>
+        <p class="member-topic en">Country: Indonesia<br>Program: <a href="https://teep.studyintaiwan.org/about" target="_blank" rel="noopener">Taiwan Experience Education Program (TEEP)</a><br>Home institution: IPB University</p>
       </div>
     </div>
 
@@ -445,8 +460,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
         <div class="member-name">Asiyah Wardah</div>
         <span class="member-badge zh">國際訪問學生</span>
         <span class="member-badge en">Visiting Student</span>
-        <p class="member-topic zh">國家：印尼<br>計畫來源：TTEP、IPB University</p>
-        <p class="member-topic en">Country: Indonesia<br>Program: TTEP, IPB University</p>
+        <p class="member-topic zh">國家：印尼<br>計畫：<a href="https://teep.studyintaiwan.org/about" target="_blank" rel="noopener">Taiwan Experience Education Program (TEEP)</a><br>原屬學校：IPB University</p>
+        <p class="member-topic en">Country: Indonesia<br>Program: <a href="https://teep.studyintaiwan.org/about" target="_blank" rel="noopener">Taiwan Experience Education Program (TEEP)</a><br>Home institution: IPB University</p>
       </div>
     </div>
 
@@ -456,8 +471,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
         <div class="member-name">Palpa Paudel</div>
         <span class="member-badge zh">國際訪問學生</span>
         <span class="member-badge en">Visiting Student</span>
-        <p class="member-topic zh">國家：尼泊爾<br>計畫來源：TTEP</p>
-        <p class="member-topic en">Country: Nepal<br>Program: TTEP</p>
+        <p class="member-topic zh">國家：尼泊爾<br>計畫：<a href="https://teep.studyintaiwan.org/about" target="_blank" rel="noopener">Taiwan Experience Education Program (TEEP)</a></p>
+        <p class="member-topic en">Country: Nepal<br>Program: <a href="https://teep.studyintaiwan.org/about" target="_blank" rel="noopener">Taiwan Experience Education Program (TEEP)</a></p>
       </div>
     </div>
 
