@@ -297,17 +297,17 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.6rem 2rem; }
 .ti-title { font-size: 14px; font-weight: 600; color: var(--g800); }
 .ti-sub { font-size: 13px; color: var(--s500); margin-top: 2px; line-height: 1.5; }
 
-.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 13px; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 13px; }
 .nav-card {
-  padding: 1.1rem 1.25rem; border: 1px solid var(--s100);
+  min-height: 132px; padding: 1.2rem 1.3rem; border: 1px solid var(--s100);
   border-radius: var(--radius); background: var(--white);
-  display: flex; align-items: center; gap: 14px;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0.6rem;
   text-decoration: none; transition: all 0.2s;
 }
 .nav-card:hover { border-color: var(--g200); background: var(--g50); transform: translateY(-1px); box-shadow: 0 3px 12px rgba(58,108,17,0.08); }
-.nc-icon { font-size: 12px; flex-shrink: 0; color: var(--t600); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-.nc-title { font-size: 15px; font-weight: 600; color: var(--g800); }
-.nc-sub { font-size: 13px; color: var(--s500); margin-top: 2px; }
+.nc-icon { font-size: 11px; color: var(--t600); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.nc-title { font-size: 17px; font-weight: 600; color: var(--g800); line-height: 1.35; }
+.nc-sub { font-size: 13px; color: var(--s500); line-height: 1.65; margin-top: 3px; }
 
 footer { background: var(--g900); padding: 3rem 2rem; }
 .footer-inner {
