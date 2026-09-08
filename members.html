@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Members — TraitMap Lab</title>
-<meta name="description" content="TraitMap Lab members — current graduate students, undergraduates, and alumni.">
+<meta name="description" content="TraitMap Lab members — current graduate students, undergraduates, international visiting students, and alumni.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -133,9 +133,10 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem; }
   font-family: var(--font-display); font-size: 52px; font-weight: 600; color: var(--g100);
 }
 /* Color accent bar per group */
-.member-card[data-group="grad"]    .member-photo { background: linear-gradient(160deg, var(--g50), #d4eaff); }
-.member-card[data-group="ugrad"]   .member-photo { background: linear-gradient(160deg, var(--t50), #e0f0ff); }
-.member-card[data-group="alumni"]  .member-photo { background: linear-gradient(160deg, var(--s50), #ede8f8); }
+.member-card[data-group="grad"]     .member-photo { background: linear-gradient(160deg, var(--g50), #d4eaff); }
+.member-card[data-group="ugrad"]    .member-photo { background: linear-gradient(160deg, var(--t50), #e0f0ff); }
+.member-card[data-group="visiting"] .member-photo { background: linear-gradient(160deg, #eef8ff, var(--t50)); }
+.member-card[data-group="alumni"]   .member-photo { background: linear-gradient(160deg, var(--s50), #ede8f8); }
 
 .member-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
 .member-name { font-size: 16px; font-weight: 500; color: var(--g800); line-height: 1.3; }
@@ -144,9 +145,10 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem; }
   font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
   padding: 3px 10px; border-radius: 12px; margin: 8px 0 6px; display: inline-block; width: fit-content;
 }
-[data-group="grad"]   .member-badge { background: #dbeeff; color: #1a5fa0; }
-[data-group="ugrad"]  .member-badge { background: var(--t50); color: var(--t600); }
-[data-group="alumni"] .member-badge { background: #ede8f8; color: #6040a0; }
+[data-group="grad"]     .member-badge { background: #dbeeff; color: #1a5fa0; }
+[data-group="ugrad"]    .member-badge { background: var(--t50); color: var(--t600); }
+[data-group="visiting"] .member-badge { background: #e5f3ff; color: #126a8a; }
+[data-group="alumni"]   .member-badge { background: #ede8f8; color: #6040a0; }
 .member-topic { font-size: 13px; color: var(--s500); line-height: 1.55; flex: 1; }
 .member-now { font-size: 12px; color: var(--t600); margin-top: 6px; font-weight: 500; }
 
@@ -223,8 +225,8 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
     <p class="ph-label">TraitMap Lab</p>
     <h1 class="ph-title zh">團隊成員</h1>
     <h1 class="ph-title en">Lab Members</h1>
-    <p class="ph-sub zh">現任研究生、大學生與畢業校友</p>
-    <p class="ph-sub en">Graduate students, undergraduates, and alumni</p>
+    <p class="ph-sub zh">現任研究生、大學生、國際訪問學生與畢業校友</p>
+    <p class="ph-sub en">Graduate students, undergraduates, international visiting students, and alumni</p>
   </div>
 </div>
 
@@ -413,6 +415,49 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
         <span class="member-badge en">Undergraduate</span>
         <p class="member-topic zh">歡迎加入實驗室！</p>
         <p class="member-topic en">Join our lab!</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="visiting">
+  <h2 class="s-title zh">國際訪問學生</h2>
+  <h2 class="s-title en">International Visiting Students</h2>
+  <div class="members-grid">
+
+    <div class="member-card" data-group="visiting">
+      <div class="member-photo"><span class="member-photo-placeholder">NH</span></div>
+      <div class="member-body">
+        <div class="member-name">Nurul Hikma</div>
+        <span class="member-badge zh">國際訪問學生</span>
+        <span class="member-badge en">Visiting Student</span>
+        <p class="member-topic zh">國家：印尼<br>計畫來源：TTEP、IPB University</p>
+        <p class="member-topic en">Country: Indonesia<br>Program: TTEP, IPB University</p>
+      </div>
+    </div>
+
+    <div class="member-card" data-group="visiting">
+      <div class="member-photo"><span class="member-photo-placeholder">AW</span></div>
+      <div class="member-body">
+        <div class="member-name">Asiyah Wardah</div>
+        <span class="member-badge zh">國際訪問學生</span>
+        <span class="member-badge en">Visiting Student</span>
+        <p class="member-topic zh">國家：印尼<br>計畫來源：TTEP、IPB University</p>
+        <p class="member-topic en">Country: Indonesia<br>Program: TTEP, IPB University</p>
+      </div>
+    </div>
+
+    <div class="member-card" data-group="visiting">
+      <div class="member-photo"><span class="member-photo-placeholder">PP</span></div>
+      <div class="member-body">
+        <div class="member-name">Palpa Paudel</div>
+        <span class="member-badge zh">國際訪問學生</span>
+        <span class="member-badge en">Visiting Student</span>
+        <p class="member-topic zh">國家：尼泊爾<br>計畫來源：TTEP</p>
+        <p class="member-topic en">Country: Nepal<br>Program: TTEP</p>
       </div>
     </div>
 
