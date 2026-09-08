@@ -91,15 +91,15 @@ nav {
   object-fit: contain; display: block;
   transform: none;
 }
-.hero-brand-text { display: flex; flex-direction: column; line-height: 1.18; padding-bottom: 8px; }
+.hero-brand-text { display: flex; flex-direction: column; gap: 5px; line-height: 1.15; padding-bottom: 10px; }
 .hero-brand-name {
   font-family: var(--font-display);
   font-size: 32px; font-weight: 600; color: var(--g800);
-  letter-spacing: 0.04em;
+  line-height: 1; letter-spacing: 0.04em;
 }
 .hero-kicker {
   font-size: 15px; font-weight: 700;
-  color: var(--t600); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--t600); line-height: 1.35; letter-spacing: 0.06em; text-transform: uppercase;
 }
 .hero-title {
   font-family: var(--font-zh);
@@ -168,7 +168,7 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.6rem 2rem; }
   letter-spacing: 0;
 }
 .s-title.en { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 600; line-height: 1.18; }
-.s-intro { max-width: 760px; font-size: 15px; color: var(--s700); line-height: 1.9; margin-bottom: 1.8rem; }
+.s-intro { max-width: 780px; font-size: 15px; color: var(--s700); line-height: 1.9; margin-bottom: 1.8rem; text-wrap: pretty; }
 
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .feature {
@@ -346,9 +346,9 @@ footer { background: var(--g900); padding: 3rem 2rem; }
   .hero-brand { max-width: 100%; gap: 13px; }
   .hero-brand-mark { width: 92px; height: 92px; }
   .hero-brand-mark img { width: 100%; height: 100%; transform: none; }
-  .hero-brand-text { padding-bottom: 6px; }
-  .hero-brand-name { font-size: 25px; line-height: 1.05; }
-  .hero-kicker { font-size: 12px; letter-spacing: 0.04em; }
+  .hero-brand-text { gap: 4px; padding-bottom: 7px; }
+  .hero-brand-name { font-size: 25px; line-height: 1; }
+  .hero-kicker { font-size: 12px; line-height: 1.35; letter-spacing: 0.04em; }
   .hero-title { font-size: clamp(32px, 9vw, 42px); line-height: 1.22; }
   .hero-title.en { font-size: clamp(34px, 9vw, 46px); line-height: 1.12; }
   section { padding: 3rem 1.5rem; }
@@ -469,7 +469,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     <p class="s-label">Lab Signature</p>
     <h2 class="s-title zh">TraitMap Lab 的研究特色</h2>
     <h2 class="s-title en">What makes TraitMap Lab distinctive</h2>
-    <p class="s-intro zh">我們的核心不是只做單一技術，而是把「性狀觀察、基因體分析、候選基因驗證、育種應用」串成同一條研究路徑。</p>
+    <p class="s-intro zh">我們不只做單一技術，而是把「性狀觀察、基因體分析、候選基因驗證、育種應用」串成完整研究路徑。</p>
     <p class="s-intro en">Our strength is not a single technique. We connect trait observation, genomic analysis, candidate-gene validation, and breeding application into one research path.</p>
     <div class="feature-grid">
       <article class="feature">
@@ -540,7 +540,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     <p class="s-label">Latest Publications</p>
     <h2 class="s-title zh">最新論文與研究成果</h2>
     <h2 class="s-title en">Latest publications and research outputs</h2>
-    <p class="s-intro zh">近年成果聚焦於作物基因體、抗病與逆境反應、分子標記開發，以及多層級資料整合，展現 TraitMap Lab 如何將基礎研究轉化為育種可用的線索。</p>
+    <p class="s-intro zh">近年成果聚焦作物基因體、抗病與逆境反應、分子標記開發與多層級資料整合，展現 TraitMap Lab 將基礎研究轉化為育種線索的能力。</p>
     <p class="s-intro en">Recent publications highlight the lab's work in crop genomics, disease and stress responses, molecular marker development, and multi-layer data integration for precision breeding.</p>
     <div class="pub-preview">
       <article class="pub-row">
