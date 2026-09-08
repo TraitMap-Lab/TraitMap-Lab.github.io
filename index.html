@@ -75,10 +75,31 @@ nav {
   padding: 4.25rem 2rem 3rem;
   display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3.25rem; align-items: center;
 }
+.hero-brand {
+  display: inline-flex; align-items: center; gap: 11px;
+  margin-bottom: 1.05rem; padding: 7px 14px 7px 8px;
+  background: rgba(255,255,255,0.72); border: 1px solid var(--s100);
+  border-radius: 999px; box-shadow: 0 4px 18px rgba(23,46,5,0.04);
+}
+.hero-brand-mark {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--g100);
+  overflow: hidden; flex: 0 0 auto; position: relative;
+}
+.hero-brand-mark img {
+  width: 82px; height: 82px; max-width: none;
+  object-fit: cover; display: block;
+  transform: translate(-18px, -9px);
+}
+.hero-brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+.hero-brand-name {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 600; color: var(--g800);
+  letter-spacing: 0.04em;
+}
 .hero-kicker {
-  font-size: 14px; font-weight: 700;
-  color: var(--t600); letter-spacing: 0.12em; text-transform: uppercase;
-  margin-bottom: 1rem;
+  font-size: 12px; font-weight: 700;
+  color: var(--t600); letter-spacing: 0.1em; text-transform: uppercase;
 }
 .hero-title {
   font-family: var(--font-zh);
@@ -114,18 +135,6 @@ nav {
 }
 
 .hero-side { display: grid; gap: 14px; align-self: start; }
-.signature-card {
-  background: var(--white); border: 1px solid var(--s100);
-  border-radius: var(--radius); padding: 0.85rem;
-  box-shadow: 0 8px 28px rgba(23,46,5,0.06);
-}
-.signature-card img { width: 100%; height: auto; display: block; border-radius: 6px; }
-.signature-card.logo-card { padding: 1rem; }
-.signature-card.logo-card img {
-  height: 230px;
-  object-fit: contain;
-  background: var(--white);
-}
 .hero-panel {
   border: 1px solid var(--s100); border-radius: var(--radius);
   background: var(--white); overflow: hidden;
@@ -376,8 +385,14 @@ footer { background: var(--g900); padding: 3rem 2rem; }
 <main>
   <div class="hero" id="about">
     <div>
-      <p class="hero-kicker zh">國立中興大學農藝學系</p>
-      <p class="hero-kicker en">Department of Agronomy, NCHU</p>
+      <div class="hero-brand" aria-label="TraitMap Lab">
+        <span class="hero-brand-mark" aria-hidden="true"><img src="images/traitmap-lab-logo.png" alt=""></span>
+        <span class="hero-brand-text">
+          <span class="hero-brand-name">TraitMap Lab</span>
+          <span class="hero-kicker zh">國立中興大學農藝學系</span>
+          <span class="hero-kicker en">Department of Agronomy, NCHU</span>
+        </span>
+      </div>
       <h1 class="hero-title zh">從作物性狀到分子標記，推進精準育種</h1>
       <h1 class="hero-title en">Mapping crop traits into precision breeding tools</h1>
       <p class="hero-desc zh">TraitMap Lab 連結田間性狀、基因體資料與分子育種，利用 GWAS、RNA-seq、BSA-seq 與高通量表型分析，解析作物抗病與逆境反應，並開發可應用於育種的分子標記。</p>
@@ -397,10 +412,7 @@ footer { background: var(--g900); padding: 3rem 2rem; }
         <span class="tag">Molecular Breeding</span>
       </div>
     </div>
-    <aside class="hero-side" aria-label="TraitMap Lab visual identity and principal investigator">
-      <div class="signature-card logo-card">
-        <img src="images/traitmap-lab-logo.png" alt="TraitMap Lab logo">
-      </div>
+    <aside class="hero-side" aria-label="TraitMap Lab principal investigator">
       <div class="hero-panel">
         <div class="hero-photo">
           <img src="images/photo.jpg" alt="Prof. Shu-Yun Chen">
