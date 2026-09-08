@@ -169,6 +169,11 @@ section { max-width: var(--max); margin: 0 auto; padding: 3.6rem 2rem; }
 }
 .s-title.en { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 600; line-height: 1.18; }
 .s-intro { max-width: 780px; font-size: 15px; color: var(--s700); line-height: 1.9; margin-bottom: 1.8rem; text-wrap: pretty; }
+.publication-intro { max-width: none; }
+
+@media (min-width: 1200px) {
+  .publication-intro { white-space: nowrap; font-size: 14px; }
+}
 
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .feature {
@@ -540,8 +545,8 @@ footer { background: var(--g900); padding: 3rem 2rem; }
     <p class="s-label">Latest Publications</p>
     <h2 class="s-title zh">最新論文與研究成果</h2>
     <h2 class="s-title en">Latest publications and research outputs</h2>
-    <p class="s-intro zh">近年成果聚焦作物基因體、抗病與逆境反應、分子標記開發與多層級資料整合，展現 TraitMap Lab 將基礎研究轉化為育種線索的能力。</p>
-    <p class="s-intro en">Recent publications highlight the lab's work in crop genomics, disease and stress responses, molecular marker development, and multi-layer data integration for precision breeding.</p>
+    <p class="s-intro publication-intro zh">近年成果聚焦作物基因體、抗病與逆境反應、分子標記開發與多層級資料整合，展現 TraitMap Lab 將基礎研究轉化為育種線索的能力。</p>
+    <p class="s-intro publication-intro en">Recent publications highlight the lab's work in crop genomics, disease and stress responses, molecular marker development, and multi-layer data integration for precision breeding.</p>
     <div class="pub-preview">
       <article class="pub-row">
         <div class="pub-year">2026</div>
