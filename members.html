@@ -7,6 +7,7 @@
 <meta name="description" content="TraitMap Lab members — current graduate students, undergraduates, international visiting students, and alumni.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="language.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -640,21 +641,5 @@ footer { background: var(--g900); padding: 3rem 2rem; margin-top: 2rem; }
   </div>
 </footer>
 
-<script>
-function toggleLang() {
-  const html = document.documentElement;
-  const btn = document.getElementById('langBtn');
-  if (html.getAttribute('data-lang') === 'zh') {
-    html.setAttribute('data-lang', 'en'); html.setAttribute('lang', 'en');
-    btn.textContent = '中文';
-  } else {
-    html.setAttribute('data-lang', 'zh'); html.setAttribute('lang', 'zh-TW');
-    btn.textContent = 'English';
-  }
-}
-document.querySelectorAll('#navLinks a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-});
-</script>
 </body>
 </html>
