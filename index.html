@@ -120,6 +120,12 @@ nav {
   box-shadow: 0 8px 28px rgba(23,46,5,0.06);
 }
 .signature-card img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.signature-card.logo-card { padding: 1rem; }
+.signature-card.logo-card img {
+  height: 230px;
+  object-fit: contain;
+  background: var(--white);
+}
 .hero-panel {
   border: 1px solid var(--s100); border-radius: var(--radius);
   background: var(--white); overflow: hidden;
@@ -392,8 +398,8 @@ footer { background: var(--g900); padding: 3rem 2rem; }
       </div>
     </div>
     <aside class="hero-side" aria-label="TraitMap Lab visual identity and principal investigator">
-      <div class="signature-card">
-        <img src="images/traitmap-signature.svg" alt="Trait to signal to marker visual identity">
+      <div class="signature-card logo-card">
+        <img src="images/traitmap-lab-logo.png" alt="TraitMap Lab logo">
       </div>
       <div class="hero-panel">
         <div class="hero-photo">
