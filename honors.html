@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Honors — TraitMap Lab</title>
+<meta name="description" content="Student honors, award-winning posters, undergraduate research projects, and thesis awards from TraitMap Lab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Noto+Sans+TC:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --g50:#EAF3DE;--g100:#C0DD97;--g200:#97C459;--g400:#5A8F1A;--g600:#3B6D11;--g800:#274F0A;--g900:#162E05;
+  --t50:#E0F5EE;--t200:#7DDBB9;--t400:#1D9E75;--t600:#0F6E56;
+  --s50:#F5F3EC;--s100:#E2DFD5;--s300:#B8B4A8;--s500:#7A7870;--s700:#494742;
+  --ink:#1e1d1a;
+  --paper:#f8f7f3;
+  --white:#fff;
+  --font-display:'Cormorant Garamond',serif;
+  --font-zh:'Noto Sans TC','Microsoft JhengHei',sans-serif;
+  --font-body:'Outfit','Noto Sans TC',sans-serif;
+  --max:1100px;
+  --radius:8px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); font-size: 16px; background: var(--paper); color: var(--ink); line-height: 1.75; }
+
+[data-lang="zh"] .en { display: none !important; }
+[data-lang="en"] .zh { display: none !important; }
+
+nav {
+  position: sticky; top: 0; z-index: 200;
+  height: 58px; padding: 0 2rem;
+  background: rgba(248,247,243,0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--s100);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+.nav-brand-en { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: 0.05em; color: var(--g800); }
+.nav-brand-zh { font-size: 11px; color: var(--s500); letter-spacing: 0.06em; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 0.75rem; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--s700); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--g600); font-weight: 600; }
+.lang-btn {
+  font-family: var(--font-body); font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 20px;
+  border: 1px solid var(--s100); background: var(--white);
+  color: var(--s700); cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.lang-btn:hover { border-color: var(--g200); color: var(--g600); background: var(--g50); }
+.nav-menu-btn { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--s700); }
+
+.page-header {
+  background: linear-gradient(150deg, var(--g900), #254f0f 58%, var(--t600));
+  color: #fff; padding: 4.6rem 2rem 3.7rem;
+}
+.page-header-inner { max-width: var(--max); margin: 0 auto; }
+.ph-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--t200); margin-bottom: 0.75rem; }
+.ph-title {
+  font-family: var(--font-zh); font-size: clamp(34px, 5vw, 52px);
+  font-weight: 700; line-height: 1.18; letter-spacing: 0; margin-bottom: 0.7rem;
+}
+.ph-title.en { font-family: var(--font-display); font-weight: 600; line-height: 1.05; }
+.ph-sub { font-size: 16px; color: rgba(255,255,255,0.76); max-width: 760px; }
+
+main { max-width: var(--max); margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 2rem; }
+.summary-card {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); padding: 1.15rem 1.25rem;
+}
+.summary-kicker { font-size: 12px; font-weight: 700; color: var(--t600); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem; }
+.summary-number { font-family: var(--font-display); font-size: 42px; line-height: 1; color: var(--g800); font-weight: 600; }
+.summary-text { font-size: 14px; color: var(--s700); margin-top: 0.35rem; }
+
+.section-block + .section-block { margin-top: 2.2rem; }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.section-label { font-size: 11px; font-weight: 700; color: var(--t600); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.2rem; }
+.section-title { font-family: var(--font-zh); font-size: clamp(25px, 3vw, 34px); font-weight: 700; color: var(--g900); letter-spacing: 0; }
+.section-title.en { font-family: var(--font-body); font-weight: 600; }
+.section-count {
+  min-width: 42px; height: 32px; padding: 0 12px; border-radius: 18px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--g50); border: 1px solid var(--g100); color: var(--g800);
+  font-size: 14px; font-weight: 700;
+}
+
+.honor-list {
+  background: var(--white); border: 1px solid var(--s100);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 8px 28px rgba(23,46,5,0.05);
+}
+.honor-item { display: grid; grid-template-columns: 120px 1fr; gap: 1.25rem; padding: 1.4rem 1.55rem; border-bottom: 1px solid var(--s100); }
+.honor-item:last-child { border-bottom: none; }
+.honor-year {
+  width: fit-content; min-width: 82px; text-align: center;
+  font-size: 15px; font-weight: 700; color: var(--g800);
+  background: var(--g50); border: 1px solid var(--g100);
+  border-radius: 20px; padding: 5px 15px;
+}
+.honor-type { margin-top: 0.75rem; font-size: 12px; font-weight: 700; color: var(--t600); letter-spacing: 0.08em; text-transform: uppercase; }
+.honor-title { font-size: 20px; font-weight: 700; color: var(--g900); line-height: 1.45; margin-bottom: 0.35rem; }
+.honor-title.en { font-weight: 600; line-height: 1.3; }
+.honor-meta { font-size: 14px; color: var(--s500); margin-bottom: 0.4rem; }
+.honor-topic { font-size: 15px; color: var(--s700); line-height: 1.8; }
+.honor-badge {
+  display: inline-flex; align-items: center; width: fit-content;
+  font-size: 12px; font-weight: 700; color: var(--g800);
+  background: var(--g50); border: 1px solid var(--g100);
+  border-radius: 18px; padding: 3px 10px; margin-bottom: 0.55rem;
+}
+.back-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem; }
+.action {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 8px 18px; border-radius: 22px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--g100); transition: all 0.2s;
+}
+.action.primary { background: var(--g800); color: #fff; border-color: var(--g800); }
+.action.secondary { background: var(--white); color: var(--g800); }
+.action:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(23,46,5,0.10); }
+
+footer { background: var(--g900); padding: 3rem 2rem; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; }
+.f-logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--g100); letter-spacing: 0.06em; }
+.f-logo span { color: var(--t200); font-weight: 400; }
+.f-sub { font-size: 13px; color: var(--g400); margin-top: 6px; line-height: 1.8; }
+.f-copy { font-size: 12px; color: var(--g600); margin-top: 8px; }
+.f-right { text-align: right; }
+.f-right a { font-size: 14px; color: var(--t200); text-decoration: none; }
+.f-right p { font-size: 13px; color: var(--g400); margin-top: 4px; }
+
+@media (max-width: 1060px) {
+  .nav-links { gap: 0.55rem; }
+  .nav-links a { font-size: 12px; }
+}
+
+@media (max-width: 780px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 58px; left: 0; right: 0;
+    background: rgba(248,247,243,0.98);
+    border-bottom: 1px solid var(--s100);
+    padding: 1.25rem 2rem 1.75rem; gap: 1rem; z-index: 199;
+  }
+  .nav-menu-btn { display: block; }
+  .page-header { padding: 3.2rem 1.5rem 2.6rem; }
+  main { padding: 2.4rem 1.5rem 4rem; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .section-head { align-items: flex-start; flex-direction: column; }
+  .honor-item { grid-template-columns: 1fr; gap: 0.85rem; padding: 1.25rem 1.35rem; }
+  .footer-inner { flex-direction: column; }
+  .f-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-en">TraitMap Lab</span>
+    <span class="nav-brand-zh zh">作物基因體與精準育種實驗室</span>
+    <span class="nav-brand-zh en" style="display:none !important; font-size:11px; color:var(--s500);">Crop Genomics &amp; Precision Breeding</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="zh">首頁</a><a href="index.html" class="en">Home</a></li>
+      <li><a href="index.html#signature" class="zh">特色</a><a href="index.html#signature" class="en">Focus</a></li>
+      <li><a href="index.html#research" class="zh">研究</a><a href="index.html#research" class="en">Research</a></li>
+      <li><a href="news.html" class="zh">最新消息</a><a href="news.html" class="en">News</a></li>
+      <li><a href="honors.html" class="active zh">榮譽榜</a><a href="honors.html" class="active en">Honors</a></li>
+      <li><a href="members.html" class="zh">團隊成員</a><a href="members.html" class="en">Members</a></li>
+      <li><a href="photos.html" class="zh">活動照片</a><a href="photos.html" class="en">Photos</a></li>
+      <li><a href="publications.html" class="zh">發表著作</a><a href="publications.html" class="en">Publications</a></li>
+    </ul>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
+    <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="ph-label">Student Honors</p>
+    <h1 class="ph-title zh">學生歷年榮譽榜</h1>
+    <h1 class="ph-title en">Student Honors</h1>
+    <p class="ph-sub zh">整理 TraitMap Lab 學生在大專生研究計畫、研討會海報與論文獎項上的成果，呈現學生從研究提案、成果發表到專業肯定的成長軌跡。</p>
+    <p class="ph-sub en">A record of TraitMap Lab student achievements across undergraduate research projects, award-winning posters, and thesis awards.</p>
+  </div>
+</header>
+
+<main>
+  <section class="summary-grid" aria-label="Honor summary">
+    <article class="summary-card">
+      <p class="summary-kicker zh">大專生計畫</p>
+      <p class="summary-kicker en">Undergraduate Projects</p>
+      <div class="summary-number">2</div>
+      <p class="summary-text zh">國科會大專學生研究計畫</p>
+      <p class="summary-text en">NSTC Undergraduate Student Research Project</p>
+    </article>
+    <article class="summary-card">
+      <p class="summary-kicker zh">海報獲獎</p>
+      <p class="summary-kicker en">Poster Awards</p>
+      <div class="summary-number">3</div>
+      <p class="summary-text zh">研討會與國際會議海報成果</p>
+      <p class="summary-text en">Conference and symposium poster recognition</p>
+    </article>
+    <article class="summary-card">
+      <p class="summary-kicker zh">學生論文獎</p>
+      <p class="summary-kicker en">Thesis Awards</p>
+      <div class="summary-number">2</div>
+      <p class="summary-text zh">最佳植物學碩士論文佳作</p>
+      <p class="summary-text en">Best M.S. thesis honorable mentions</p>
+    </article>
+  </section>
+
+  <section class="section-block" id="undergraduate-projects">
+    <div class="section-head">
+      <div>
+        <p class="section-label">NSTC Projects</p>
+        <h2 class="section-title zh">大專生研究計畫</h2>
+        <h2 class="section-title en">Undergraduate Research Projects</h2>
+      </div>
+      <span class="section-count">2</span>
+    </div>
+    <div class="honor-list">
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2026</div>
+          <div class="honor-type zh">115年度</div>
+          <div class="honor-type en">2026</div>
+        </div>
+        <div>
+          <span class="honor-badge zh">國科會大專學生研究計畫</span>
+          <span class="honor-badge en">NSTC Undergraduate Student Research Project</span>
+          <h3 class="honor-title zh">趙芝瑩</h3>
+          <h3 class="honor-title en">Chih-Ying Chao</h3>
+          <p class="honor-meta zh">大學部專題生</p>
+          <p class="honor-meta en">Undergraduate Researcher</p>
+          <p class="honor-topic zh">絲瓜抗萎凋病防禦機制的跨層級驗證</p>
+          <p class="honor-topic en">Cross-Level Validation of Defense Mechanisms Against Fusarium Wilt in Luffa</p>
+        </div>
+      </article>
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2026</div>
+          <div class="honor-type zh">115年度</div>
+          <div class="honor-type en">2026</div>
+        </div>
+        <div>
+          <span class="honor-badge zh">國科會大專學生研究計畫</span>
+          <span class="honor-badge en">NSTC Undergraduate Student Research Project</span>
+          <h3 class="honor-title zh">盧昱婷</h3>
+          <h3 class="honor-title en">Yu-Ting Lu (Ashli)</h3>
+          <p class="honor-meta zh">大學部專題生</p>
+          <p class="honor-meta en">Undergraduate Researcher</p>
+          <p class="honor-topic zh">高濕度條件誘導番茄花脫落相關花粉發育調控基因之分子特性研究</p>
+          <p class="honor-topic en">Molecular Characterization of Pollen-Development Regulatory Genes Associated with Flower Abscission under High-Humidity Conditions in Tomato</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-block" id="poster-awards">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Poster Awards</p>
+        <h2 class="section-title zh">研討會海報獲獎</h2>
+        <h2 class="section-title en">Award-Winning Posters</h2>
+      </div>
+      <span class="section-count">3</span>
+    </div>
+    <div class="honor-list">
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2025</div>
+          <div class="honor-type">ABS2025</div>
+        </div>
+        <div>
+          <span class="honor-badge">Best Poster Award</span>
+          <h3 class="honor-title">Unveiling Key genes underlying High-market value traits in bitter gourd through integrated computer vision and GWAS approaches.</h3>
+          <p class="honor-meta">Chi-Chen Wei, Chuang-Kai Chueh, Sheng-Chih Chang and Shu-Yun Chen</p>
+        </div>
+      </article>
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2025</div>
+          <div class="honor-type zh">臺灣園藝學會</div>
+          <div class="honor-type en">TSHS Annual Meeting</div>
+        </div>
+        <div>
+          <span class="honor-badge zh">佳作</span>
+          <span class="honor-badge en">Honorable Mention</span>
+          <h3 class="honor-title zh">探討台農57與台農66甘藷的氮素分配模式與氮肥使用效率之差異</h3>
+          <h3 class="honor-title en">Differences in nitrogen allocation patterns and nitrogen use efficiency between sweet potato Tainung 57 and Tainung 66</h3>
+          <p class="honor-meta zh">陳柏儒、陸柏憲、鄭舒允</p>
+          <p class="honor-meta en">Bo-Ru Chen, Po-Hsien Lu, and Shu-Yun Chen</p>
+        </div>
+      </article>
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2024</div>
+          <div class="honor-type">PAG 32</div>
+        </div>
+        <div>
+          <span class="honor-badge">3rd Best Poster Award</span>
+          <h3 class="honor-title">Genetic Exploration and Genome-Wide Identification of Resistance Genes Related to Yellow Leaf Disease in <em>Phalaenopsis</em> Orchids.</h3>
+          <p class="honor-meta">Ling-Yu Chen, Yen-Hsiang Huang, Yan-Jeng Wu, Wen-Huei Chen, Hong-Hwa Chen, and Shu-Yun Chen</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-block" id="thesis-awards">
+    <div class="section-head">
+      <div>
+        <p class="section-label">Thesis Awards</p>
+        <h2 class="section-title zh">學生論文獎項</h2>
+        <h2 class="section-title en">Student Thesis Awards</h2>
+      </div>
+      <span class="section-count">2</span>
+    </div>
+    <div class="honor-list">
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2025</div>
+          <div class="honor-type zh">台灣植物學會</div>
+          <div class="honor-type en">Taiwan Botanical Society</div>
+        </div>
+        <div>
+          <span class="honor-badge zh">最佳植物學碩士論文佳作</span>
+          <span class="honor-badge en">Best M.S. Thesis in Plant Biology, Honorable Mention</span>
+          <h3 class="honor-title zh">陳令瑜</h3>
+          <h3 class="honor-title en">Ling-Yu Chen</h3>
+          <p class="honor-topic zh">基因型數據集篩選對蝴蝶蘭黃葉病抗性之全基因體關聯分析結果之影響</p>
+          <p class="honor-topic en">Effects of genotype dataset filtering on genome-wide association analysis for yellow leaf disease resistance in Phalaenopsis orchids</p>
+        </div>
+      </article>
+      <article class="honor-item">
+        <div>
+          <div class="honor-year">2025</div>
+          <div class="honor-type zh">台灣植物學會</div>
+          <div class="honor-type en">Taiwan Botanical Society</div>
+        </div>
+        <div>
+          <span class="honor-badge zh">最佳植物學碩士論文佳作</span>
+          <span class="honor-badge en">Best M.S. Thesis in Plant Biology, Honorable Mention</span>
+          <h3 class="honor-title zh">魏琪蓁</h3>
+          <h3 class="honor-title en">Chi-Chen Wei</h3>
+          <p class="honor-topic zh">利用電腦輔助判讀苦瓜花性與果實性狀的遺傳模式及相關 QTL 的探勘</p>
+          <p class="honor-topic en">Genetic patterns and QTL discovery for bitter gourd flower sex and fruit traits using computer-assisted phenotyping</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="back-links">
+    <a href="index.html#more" class="action primary zh">回首頁</a>
+    <a href="index.html#more" class="action primary en">Back to Home</a>
+    <a href="publications.html#conf" class="action secondary zh">查看海報列表</a>
+    <a href="publications.html#conf" class="action secondary en">View Posters</a>
+    <a href="members.html" class="action secondary zh">查看團隊成員</a>
+    <a href="members.html" class="action secondary en">View Members</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-logo">TraitMap<span> Lab</span></div>
+      <div class="f-sub zh" style="margin-top:6px;">作物基因體與精準育種實驗室<br>國立中興大學 農藝學系<br>台中市 402 南區興大路 145 號</div>
+      <div class="f-sub en" style="margin-top:6px;">Crop Genomics &amp; Precision Breeding Laboratory<br>Department of Agronomy, NCHU<br>145 Xingda Rd., South Dist., Taichung 402, Taiwan</div>
+      <div class="f-copy">© 2026 TraitMap Lab, NCHU</div>
+    </div>
+    <div class="f-right">
+      <a href="mailto:syc@nchu.edu.tw">syc@nchu.edu.tw</a>
+      <p class="zh">+886-4-2284-0777 #703</p>
+      <p class="en">+886-4-2284-0777 ext. 703</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleLang() {
+  const html = document.documentElement;
+  const btn = document.getElementById('langBtn');
+  if (html.getAttribute('data-lang') === 'zh') {
+    html.setAttribute('data-lang', 'en');
+    html.setAttribute('lang', 'en');
+    btn.textContent = '中文';
+  } else {
+    html.setAttribute('data-lang', 'zh');
+    html.setAttribute('lang', 'zh-TW');
+    btn.textContent = 'English';
+  }
+}
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>
